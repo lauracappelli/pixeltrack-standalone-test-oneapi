@@ -6,8 +6,8 @@
 #include <cstdint>
 #include <cstdio>
 
-#include "CondFormats/SiPixelGainForHLTonGPU.h"
-#include "CUDACore/cuda_assert.h"
+#include "../CondFormats/SiPixelGainForHLTonGPU.h"
+#include "../CUDACore/cuda_assert.h"
 
 #include "gpuClusteringConstants.h"
 

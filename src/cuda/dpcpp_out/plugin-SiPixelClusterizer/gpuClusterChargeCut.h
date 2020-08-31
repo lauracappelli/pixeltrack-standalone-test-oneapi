@@ -6,9 +6,9 @@
 #include <cstdint>
 #include <cstdio>
 
-#include "CUDACore/cuda_assert.h"
-#include "CUDACore/prefixScan.h"
-
+#include "../CUDACore/cuda_assert.h"
+#include "../CUDACore/prefixScan.h"
+	
 #include "gpuClusteringConstants.h"
 
 namespace gpuClustering {

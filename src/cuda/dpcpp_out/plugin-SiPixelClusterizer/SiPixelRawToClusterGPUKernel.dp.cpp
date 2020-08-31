@@ -24,12 +24,12 @@
 // cub includes
 
 // CMSSW includes
-#include "CUDADataFormats/gpuClusteringConstants.h"
-#include "CUDACore/cudaCheck.h"
-#include "CUDACore/device_unique_ptr.h"
-#include "CUDACore/host_unique_ptr.h"
+#include "../CUDADataFormats/gpuClusteringConstants.h"
+#include "../CUDACore/cudaCheck.h"
+#include "../CUDACore/device_unique_ptr.h"
+#include "../CUDACore/host_unique_ptr.h"
 
-#include "CondFormats/SiPixelFedCablingMapGPU.h"
+#include "../CondFormats/SiPixelFedCablingMapGPU.h"
 
 #include "gpuCalibPixel.h"
 #include "gpuClusterChargeCut.h"
@@ -774,8 +774,8 @@ namespace pixelgpudetails {
       */
       //cudaCheck(0);
 #ifdef GPU_DEBUG
-      cudaDeviceSynchronize();
-      cudaCheck(cudaGetLastError());
+      //cudaDeviceSynchronize();
+      //cudaCheck(cudaGetLastError());
 #endif
 
       // apply charge cut
@@ -855,8 +855,8 @@ namespace pixelgpudetails {
 	}
 
 #ifdef GPU_DEBUG
-      cudaDeviceSynchronize();
-      cudaCheck(cudaGetLastError());
+      //cudaDeviceSynchronize();
+      //cudaCheck(cudaGetLastError());
 #endif
 
     }  // end clusterizer scope
