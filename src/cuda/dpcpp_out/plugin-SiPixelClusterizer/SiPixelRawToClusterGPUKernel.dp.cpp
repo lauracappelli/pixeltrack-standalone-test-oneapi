@@ -160,7 +160,7 @@ namespace pixelgpudetails {
           /*
           DPCT1015:28: Output needs adjustment.
           */
-          stream_ct1 << "Error in Fed: %i, invalid channel Id (errorType = 35\n)";
+          stream_ct1 << "Error in Fed: %i, invalid channel Id (errorType = 35\n)" << cl::sycl::endl;
         errorType = 35;
         break;
       }
@@ -169,7 +169,7 @@ namespace pixelgpudetails {
           /*
           DPCT1015:29: Output needs adjustment.
           */
-          stream_ct1 << "Error in Fed: %i, invalid ROC Id (errorType = 36)\n";
+          stream_ct1 << "Error in Fed: %i, invalid ROC Id (errorType = 36)\n" << cl::sycl::endl;
         errorType = 36;
         break;
       }
@@ -178,7 +178,7 @@ namespace pixelgpudetails {
           /*
           DPCT1015:30: Output needs adjustment.
           */
-          stream_ct1 << "Error in Fed: %i, invalid dcol/pixel value (errorType = 37)\n";
+          stream_ct1 << "Error in Fed: %i, invalid dcol/pixel value (errorType = 37)\n" << cl::sycl::endl;
         errorType = 37;
         break;
       }
@@ -187,7 +187,7 @@ namespace pixelgpudetails {
           /*
           DPCT1015:31: Output needs adjustment.
           */
-          stream_ct1 << "Error in Fed: %i, dcol/pixel read out of order (errorType = 38)\n";
+          stream_ct1 << "Error in Fed: %i, dcol/pixel read out of order (errorType = 38)\n" << cl::sycl::endl;
         errorType = 38;
         break;
       }
@@ -196,7 +196,7 @@ namespace pixelgpudetails {
           /*
           DPCT1015:32: Output needs adjustment.
           */
-          stream_ct1 << "Cabling check returned unexpected result, status = %i\n";
+          stream_ct1 << "Cabling check returned unexpected result, status = %i\n" << cl::sycl::endl;
     };
 
     return errorType;
@@ -229,47 +229,47 @@ namespace pixelgpudetails {
             errorFound = false;
         }
         if (debug and errorFound)
-          stream_ct1 << "Invalid ROC = 25 found (errorType = 25)\n";
+          stream_ct1 << "Invalid ROC = 25 found (errorType = 25)\n" << cl::sycl::endl;
         break;
       }
       case (26): {
         if (debug)
-          stream_ct1 << "Gap word found (errorType = 26)\n";
+          stream_ct1 << "Gap word found (errorType = 26)\n" << cl::sycl::endl;
         errorFound = true;
         break;
       }
       case (27): {
         if (debug)
-          stream_ct1 << "Dummy word found (errorType = 27)\n";
+          stream_ct1 << "Dummy word found (errorType = 27)\n" << cl::sycl::endl;
         errorFound = true;
         break;
       }
       case (28): {
         if (debug)
-          stream_ct1 << "Error fifo nearly full (errorType = 28)\n";
+          stream_ct1 << "Error fifo nearly full (errorType = 28)\n" << cl::sycl::endl;
         errorFound = true;
         break;
       }
       case (29): {
         if (debug)
-          stream_ct1 << "Timeout on a channel (errorType = 29)\n";
+          stream_ct1 << "Timeout on a channel (errorType = 29)\n" << cl::sycl::endl;
         if ((errorWord >> pixelgpudetails::OMIT_ERR_shift) & pixelgpudetails::OMIT_ERR_mask) {
           if (debug)
-            stream_ct1 << "...first errorType=29 error, this gets masked out\n";
+            stream_ct1 << "...first errorType=29 error, this gets masked out\n" << cl::sycl::endl;
         }
         errorFound = true;
         break;
       }
       case (30): {
         if (debug)
-          stream_ct1 << "TBM error trailer (errorType = 30)\n";
+          stream_ct1 << "TBM error trailer (errorType = 30)\n" cl::sycl::endl;
         int StateMatch_bits = 4;
         int StateMatch_shift = 8;
         uint32_t StateMatch_mask = ~(~uint32_t(0) << StateMatch_bits);
         int StateMatch = (errorWord >> StateMatch_shift) & StateMatch_mask;
         if (StateMatch != 1 && StateMatch != 8) {
           if (debug)
-            stream_ct1 << "FED error 30 with unexpected State Bits (errorType = 30)\n";
+            stream_ct1 << "FED error 30 with unexpected State Bits (errorType = 30)\n" << cl::sycl::endl;
         }
         if (StateMatch == 1)
           errorType = 40;  // 1=Overflow -> 40, 8=number of ROCs -> 30
@@ -278,7 +278,7 @@ namespace pixelgpudetails {
       }
       case (31): {
         if (debug)
-          stream_ct1 << "Event number error (errorType = 31)\n";
+          stream_ct1 << "Event number error (errorType = 31)\n" << cl::sycl::endl;
         errorFound = true;
         break;
       }
@@ -465,7 +465,7 @@ namespace pixelgpudetails {
               /*
               DPCT1015:33: Output needs adjustment.
               */
-              stream_ct1 << "BPIX1  Error status: %i\n";
+              stream_ct1 << "BPIX1  Error status: %i\n" << cl::sycl::endl;
             continue;
           }
         }
@@ -484,7 +484,7 @@ namespace pixelgpudetails {
             /*
             DPCT1015:34: Output needs adjustment.
             */
-            stream_ct1 << "Error status: %i %d %d %d %d\n";
+            stream_ct1 << "Error status: %i %d %d %d %d\n" << cl::sycl::endl;
           continue;
         }
       }
@@ -587,11 +587,15 @@ namespace pixelgpudetails {
       /*
       DPCT1003:35: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      cudaCheck((stream->memcpy(word_d.get(), wordFed.word(), wordCounter * sizeof(uint32_t)), 0));
+      if((stream->memcpy(word_d.get(), wordFed.word(), wordCounter * sizeof(uint32_t)))!=0){
+	      std::cout << "Errore!" << std::endl;
+      }
       /*
       DPCT1003:36: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      cudaCheck((stream->memcpy(fedId_d.get(), wordFed.fedId(), wordCounter * sizeof(uint8_t) / 2), 0));
+      if((stream->memcpy(fedId_d.get(), wordFed.fedId(), wordCounter * sizeof(uint8_t) / 2))!= 0){
+	      std::cout << "Errore!" << std::endl;
+      }
 
       // Launch rawToDigi kernel
       stream->submit([&](sycl::handler &cgh) {
@@ -633,10 +637,10 @@ namespace pixelgpudetails {
       /*
       DPCT1010:37: SYCL uses exceptions to report errors and does not use the error codes. The call was replaced with 0. You need to rewrite this code.
       */
-      cudaCheck(0);
+      //cudaCheck(0);
 #ifdef GPU_DEBUG
-      cudaDeviceSynchronize();
-      cudaCheck(cudaGetLastError());
+      //cudaDeviceSynchronize();			!! DA MODIFICARE
+      //cudaCheck(cudaGetLastError());
 #endif
 
       if (includeErrors) {
@@ -683,15 +687,15 @@ namespace pixelgpudetails {
       /*
       DPCT1010:38: SYCL uses exceptions to report errors and does not use the error codes. The call was replaced with 0. You need to rewrite this code.
       */
-      cudaCheck(0);
+      //cudaCheck(0);
 #ifdef GPU_DEBUG
-      cudaDeviceSynchronize();
-      cudaCheck(cudaGetLastError());
+      //cudaDeviceSynchronize();      		!! DA MODIFICARE
+      //cudaCheck(cudaGetLastError());
 #endif
 
 #ifdef GPU_DEBUG
       std::cout << "CUDA countModules kernel launch with " << blocks << " blocks of " << threadsPerBlock
-                << " threads\n";
+                << " threads\n" << std::endl;
 #endif
 
       stream->submit([&](sycl::handler &cgh) {
@@ -711,18 +715,20 @@ namespace pixelgpudetails {
       /*
       DPCT1010:39: SYCL uses exceptions to report errors and does not use the error codes. The call was replaced with 0. You need to rewrite this code.
       */
-      cudaCheck(0);
+      //cudaCheck(0);
 
       // read the number of modules into a data member, used by getProduct())
       /*
       DPCT1003:40: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      cudaCheck((stream->memcpy(&(nModules_Clusters_h[0]), clusters_d.moduleStart(), sizeof(uint32_t)), 0));
+      if((stream->memcpy(&(nModules_Clusters_h[0]), clusters_d.moduleStart(), sizeof(uint32_t)))!= 0){
+	      std::cout << "Errore!" << std::cout;
+	}
 
       threadsPerBlock = 256;
       blocks = MaxNumModules;
 #ifdef GPU_DEBUG
-      std::cout << "CUDA findClus kernel launch with " << blocks << " blocks of " << threadsPerBlock << " threads\n";
+      std::cout << "CUDA findClus kernel launch with " << blocks << " blocks of " << threadsPerBlock << " threads" << std::endl;
 #endif
       stream->submit([&](sycl::handler &cgh) {
         sycl::stream stream_ct1(64 * 1024, 80, cgh);
@@ -766,7 +772,7 @@ namespace pixelgpudetails {
       /*
       DPCT1010:41: SYCL uses exceptions to report errors and does not use the error codes. The call was replaced with 0. You need to rewrite this code.
       */
-      cudaCheck(0);
+      //cudaCheck(0);
 #ifdef GPU_DEBUG
       cudaDeviceSynchronize();
       cudaCheck(cudaGetLastError());
@@ -815,7 +821,7 @@ namespace pixelgpudetails {
       /*
       DPCT1010:42: SYCL uses exceptions to report errors and does not use the error codes. The call was replaced with 0. You need to rewrite this code.
       */
-      cudaCheck(0);
+      //cudaCheck(0);
 
       // count the module start indices already here (instead of
       // rechits) so that the number of clusters/hits can be made
@@ -843,10 +849,10 @@ namespace pixelgpudetails {
       /*
       DPCT1003:43: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      cudaCheck((
-          stream->memcpy(
-              &(nModules_Clusters_h[1]), clusters_d.clusModuleStart() + gpuClustering::MaxNumModules, sizeof(uint32_t)),
-          0));
+      if((stream->memcpy(
+              &(nModules_Clusters_h[1]), clusters_d.clusModuleStart() + gpuClustering::MaxNumModules, sizeof(uint32_t))!=0){
+		      std::cout << "Errore" << std::endl;      
+	}
 
 #ifdef GPU_DEBUG
       cudaDeviceSynchronize();
