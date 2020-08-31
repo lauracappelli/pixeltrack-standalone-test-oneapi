@@ -1,0 +1,83 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/dpcpp_out/CUDACore/host_noncached_unique_ptr.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          157
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          176
+    Length:          26
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          469
+    Length:          0
+    ReplacementText: '            /*
+            DPCT1003:25: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
+            */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          520
+    Length:          17
+    ReplacementText: '(sycl::free(ptr, dpct::get_default_queue())'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          537
+    Length:          0
+    ReplacementText: ', 0)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          1781
+    Length:          0
+    ReplacementText: '      /*
+      DPCT1003:26: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
+      */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          1797
+    Length:          13
+    ReplacementText: '(mem = (void *)sycl::malloc_host'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          1811
+    Length:          6
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          1826
+    Length:          7
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          1833
+    Length:          0
+    ReplacementText: ', dpct::get_default_queue()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          1834
+    Length:          0
+    ReplacementText: ', 0)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          2420
+    Length:          0
+    ReplacementText: '      /*
+      DPCT1003:27: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
+      */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          2436
+    Length:          13
+    ReplacementText: '(mem = (void *)sycl::malloc_host'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          2450
+    Length:          6
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          2480
+    Length:          7
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          2487
+    Length:          0
+    ReplacementText: ', dpct::get_default_queue()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_noncached_unique_ptr.h'
+    Offset:          2488
+    Length:          0
+    ReplacementText: ', 0)'
+...

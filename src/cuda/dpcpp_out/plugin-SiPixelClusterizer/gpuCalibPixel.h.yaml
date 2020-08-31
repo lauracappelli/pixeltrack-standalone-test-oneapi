@@ -1,0 +1,63 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/dpcpp_out/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          137
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          674
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          1287
+    Length:          0
+    ReplacementText: ',
+                             sycl::nd_item<3> item_ct1,
+                             sycl::stream stream_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          1307
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          1320
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          1333
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          1509
+    Length:          9
+    ReplacementText: 'item_ct1.get_group_range(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          1521
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          1620
+    Length:          9
+    ReplacementText: 'item_ct1.get_group_range(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          1632
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          2242
+    Length:          0
+    ReplacementText: '        /*
+        DPCT1015:4: Output needs adjustment.
+        */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          2250
+    Length:          43
+    ReplacementText: 'stream_ct1 << "bad pixel at %d in %d\n"'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuCalibPixel.h'
+    Offset:          2381
+    Length:          52
+    ReplacementText: 'sycl::max(100, int(vcal * conversionFactor + offset))'
+...

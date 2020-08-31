@@ -1,0 +1,66 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/dpcpp_out/CUDACore/GPUSimpleVector.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          178
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          1163
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          1227
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          1464
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          1535
+    Length:          21
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_add(1)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          1689
+    Length:          21
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_sub(1)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          1777
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          1848
+    Length:          21
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_add(1)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          2030
+    Length:          21
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_sub(1)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          2128
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          2192
+    Length:          24
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_add(size)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          2309
+    Length:          24
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_sub(size)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          2373
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          2437
+    Length:          24
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_sub(size)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/GPUSimpleVector.h'
+    Offset:          2556
+    Length:          24
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_add(size)'
+...

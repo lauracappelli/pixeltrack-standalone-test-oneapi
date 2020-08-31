@@ -1,0 +1,14 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/dpcpp_out/CUDACore/cudaCompat.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/cudaCompat.h'
+    Offset:          0
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/cudaCompat.h'
+    Offset:          212
+    Length:          10
+    ReplacementText: CL_SYCL_LANGUAGE_VERSION
+...

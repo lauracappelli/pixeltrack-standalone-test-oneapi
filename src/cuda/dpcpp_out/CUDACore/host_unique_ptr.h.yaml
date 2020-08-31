@@ -1,0 +1,42 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/dpcpp_out/CUDACore/host_unique_ptr.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_unique_ptr.h'
+    Offset:          137
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_unique_ptr.h'
+    Offset:          1269
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_unique_ptr.h'
+    Offset:          1282
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_unique_ptr.h'
+    Offset:          1748
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_unique_ptr.h'
+    Offset:          1761
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_unique_ptr.h'
+    Offset:          2562
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_unique_ptr.h'
+    Offset:          2575
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_unique_ptr.h'
+    Offset:          2894
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/host_unique_ptr.h'
+    Offset:          2907
+    Length:          0
+    ReplacementText: '*'
+...

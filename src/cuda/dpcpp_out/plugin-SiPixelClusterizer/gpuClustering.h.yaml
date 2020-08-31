@@ -1,0 +1,336 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/dpcpp_out/plugin-SiPixelClusterizer/gpuClustering.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          137
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          415
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          654
+    Length:          0
+    ReplacementText: ',
+                               sycl::nd_item<3> item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          674
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          687
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          700
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          759
+    Length:          9
+    ReplacementText: 'item_ct1.get_group_range(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          771
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          1007
+    Length:          9
+    ReplacementText: 'dpct::atomic_fetch_compare_inc'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          1101
+    Length:          10
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          1825
+    Length:          0
+    ReplacementText: ',
+               sycl::nd_item<3> item_ct1,
+               sycl::stream stream_ct1,
+               int *msize,
+               Hist *hist,
+               typename Hist::Counter *ws,
+               unsigned int *foundClusters'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          1837
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          1920
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          2223
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          2324
+    Length:          21
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          2350
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          2375
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          2495
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          2667
+    Length:          20
+    ReplacementText: 'sycl::atomic<int, sycl::access::address_space::local_space>(sycl::local_ptr<int>(msize)).fetch_min(i)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          2967
+    Length:          21
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          2993
+    Length:          41
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3053
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3092
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3116
+    Length:          1
+    ReplacementText: '->'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3139
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3416
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3441
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3480
+    Length:          0
+    ReplacementText: '        /*
+        DPCT1015:15: Output needs adjustment.
+        */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3488
+    Length:          99
+    ReplacementText: 'stream_ct1 << "too many pixels in module %d: %d > %d\n"'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3597
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3653
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3863
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3875
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          3967
+    Length:          1
+    ReplacementText: '->'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          4045
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          4070
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          4097
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          4146
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          4171
+    Length:          1
+    ReplacementText: '->'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          4181
+    Length:          0
+    ReplacementText: 'item_ct1, '
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          4190
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          4404
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          4416
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          4508
+    Length:          1
+    ReplacementText: '->'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          4551
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          5114
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          5790
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          5819
+    Length:          1
+    ReplacementText: '->'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          5833
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          5898
+    Length:          1
+    ReplacementText: '->'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          6082
+    Length:          1
+    ReplacementText: '->'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          6317
+    Length:          31
+    ReplacementText: 'sycl::abs(int(x[m]) - int(x[i]))'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          6833
+    Length:          22
+    ReplacementText: '(item_ct1.barrier(), sycl::intel::any_of(item_ct1.get_group(), more))'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          6910
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          6939
+    Length:          1
+    ReplacementText: '->'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          6953
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          6995
+    Length:          1
+    ReplacementText: '->'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          7241
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          7270
+    Length:          1
+    ReplacementText: '->'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          7284
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          7326
+    Length:          1
+    ReplacementText: '->'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          7544
+    Length:          38
+    ReplacementText: 'sycl::atomic<int32_t>(sycl::global_ptr<int32_t>(&clusterId[m])).fetch_min(clusterId[i])'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          7738
+    Length:          29
+    ReplacementText: 'sycl::atomic<int32_t>(sycl::global_ptr<int32_t>(&clusterId[i])).fetch_min(old)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          8176
+    Length:          38
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          8219
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          8242
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          8421
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          8433
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          8565
+    Length:          9
+    ReplacementText: 'dpct::atomic_fetch_compare_inc<unsigned int, sycl::access::address_space::local_space>'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          8575
+    Length:          1
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          8657
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          8770
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          8782
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          9035
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          9149
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          9161
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          9333
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          9359
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          9419
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/gpuClustering.h'
+    Offset:          9449
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+...

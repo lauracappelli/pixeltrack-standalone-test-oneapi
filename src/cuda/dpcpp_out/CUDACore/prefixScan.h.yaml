@@ -1,0 +1,348 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/dpcpp_out/CUDACore/prefixScan.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          127
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          222
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          258
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          274
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          376
+    Length:          0
+    ReplacementText: ',
+                                    sycl::nd_item<3> item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          445
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          532
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1023:5: The DPC++ sub-group does not support mask options for shuffle_up.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          545
+    Length:          31
+    ReplacementText: 'item_ct1.get_sub_group().shuffle_up(x, offset)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          679
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          715
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          731
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          793
+    Length:          0
+    ReplacementText: ', sycl::nd_item<3> item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          830
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          917
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1023:6: The DPC++ sub-group does not support mask options for shuffle_up.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          930
+    Length:          31
+    ReplacementText: 'item_ct1.get_sub_group().shuffle_up(x, offset)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1084
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1095
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1109
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1380
+    Length:          0
+    ReplacementText: ',
+                                                         sycl::nd_item<3> item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1387
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1486
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1585
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1598
+    Length:          0
+    ReplacementText: '  /*
+  DPCT1004:7: Could not generate replacement.
+  */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1612
+    Length:          39
+    ReplacementText: '__ballot_sync(0xffffffff, first < size)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1692
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1734
+    Length:          0
+    ReplacementText: ', item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1761
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1880
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1004:8: Could not generate replacement.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1891
+    Length:          42
+    ReplacementText: '__ballot_sync(mask, i + item_ct1.get_local_range(2) < size)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1941
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          1994
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2035
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2058
+    Length:          0
+    ReplacementText: ', item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2063
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2123
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2198
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2401
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2412
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2426
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2600
+    Length:          0
+    ReplacementText: ',
+                                                         sycl::nd_item<3> item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2607
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2706
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2805
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2818
+    Length:          0
+    ReplacementText: '  /*
+  DPCT1004:9: Could not generate replacement.
+  */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2832
+    Length:          39
+    ReplacementText: '__ballot_sync(0xffffffff, first < size)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2912
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2955
+    Length:          0
+    ReplacementText: ', item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          2976
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3094
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1004:10: Could not generate replacement.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3105
+    Length:          42
+    ReplacementText: '__ballot_sync(mask, i + item_ct1.get_local_range(2) < size)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3155
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3208
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3249
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3272
+    Length:          0
+    ReplacementText: ', item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3277
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3337
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3411
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3563
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3671
+    Length:          0
+    ReplacementText: ',
+                          sycl::nd_item<3> item_ct1, T *ws, bool *isLastBlockDone, T *psum'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3677
+    Length:          20
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3831
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3905
+    Length:          26
+    ReplacementText: 'sycl::min(1024, size - off)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3931
+    Length:          0
+    ReplacementText: ', item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          3973
+    Length:          32
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4017
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4049
+    Length:          16
+    ReplacementText: 'sycl::atomic<int32_t>(sycl::global_ptr<int32_t>(pc)).fetch_add(1)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4089
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4122
+    Length:          9
+    ReplacementText: 'item_ct1.get_group_range(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4147
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4172
+    Length:          0
+    ReplacementText: '(*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4187
+    Length:          0
+    ReplacementText: ')'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4326
+    Length:          24
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4366
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4384
+    Length:          9
+    ReplacementText: 'item_ct1.get_group_range(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4408
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4499
+    Length:          15
+    ReplacementText: 'item_ct1.barrier()'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4546
+    Length:          9
+    ReplacementText: 'item_ct1.get_group_range(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4555
+    Length:          0
+    ReplacementText: ', item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4646
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/prefixScan.h'
+    Offset:          4764
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+...

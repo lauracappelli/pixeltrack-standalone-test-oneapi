@@ -1,0 +1,149 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/dpcpp_out/CUDADataFormats/SiPixelDigisCUDA.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          131
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          243
+    Length:          26
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          383
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          396
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2083
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2096
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2168
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2181
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2255
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2268
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2345
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2358
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2447
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1026:16: The call to __ldg was removed, because there is no correspoinding API in DPC++.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2451
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2462
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2512
+    Length:          14
+    ReplacementText: '*(xx_ + i)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2530
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1026:17: The call to __ldg was removed, because there is no correspoinding API in DPC++.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2534
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2545
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2595
+    Length:          14
+    ReplacementText: '*(yy_ + i)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2613
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1026:18: The call to __ldg was removed, because there is no correspoinding API in DPC++.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2617
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2628
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2679
+    Length:          15
+    ReplacementText: '*(adc_ + i)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2698
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1026:19: The call to __ldg was removed, because there is no correspoinding API in DPC++.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2702
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2713
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2770
+    Length:          21
+    ReplacementText: '*(moduleInd_ + i)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2795
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1026:20: The call to __ldg was removed, because there is no correspoinding API in DPC++.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2799
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2810
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigisCUDA.h'
+    Offset:          2861
+    Length:          16
+    ReplacementText: '*(clus_ + i)'
+...

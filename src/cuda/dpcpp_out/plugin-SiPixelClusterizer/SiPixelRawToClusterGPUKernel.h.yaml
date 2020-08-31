@@ -1,0 +1,50 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/dpcpp_out/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+    Offset:          167
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+    Offset:          188
+    Length:          26
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+    Offset:          2836
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+    Offset:          2845
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+    Offset:          4070
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+    Offset:          4079
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+    Offset:          4163
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+    Offset:          4172
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+    Offset:          4304
+    Length:          33
+    ReplacementText: 'sycl::min(adc, (const unsigned int)(thePacking.max_adc))'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+    Offset:          6171
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/plugin-SiPixelClusterizer/SiPixelRawToClusterGPUKernel.h'
+    Offset:          6184
+    Length:          0
+    ReplacementText: '*'
+...

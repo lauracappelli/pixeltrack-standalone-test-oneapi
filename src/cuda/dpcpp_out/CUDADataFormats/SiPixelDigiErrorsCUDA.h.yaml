@@ -1,0 +1,38 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/dpcpp_out/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          141
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          295
+    Length:          26
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          479
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          492
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          1311
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          1324
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          1368
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          1381
+    Length:          0
+    ReplacementText: '*'
+...

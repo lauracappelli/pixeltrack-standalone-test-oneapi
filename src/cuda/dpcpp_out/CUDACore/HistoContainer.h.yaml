@@ -1,0 +1,459 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/dpcpp_out/CUDACore/HistoContainer.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          135
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          164
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          290
+    Length:          10
+    ReplacementText: CL_SYCL_LANGUAGE_VERSION
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          301
+    Length:          23
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          593
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          830
+    Length:          0
+    ReplacementText: ',
+                                    sycl::nd_item<3> item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          852
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          865
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          878
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          948
+    Length:          9
+    ReplacementText: 'item_ct1.get_group_range(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          960
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          1260
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          1493
+    Length:          0
+    ReplacementText: ',
+                                   sycl::nd_item<3> item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          1515
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          1528
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          1541
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          1611
+    Length:          9
+    ReplacementText: 'item_ct1.get_group_range(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          1623
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          1986
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          1999
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          2014
+    Length:          10
+    ReplacementText: CL_SYCL_LANGUAGE_VERSION
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          2166
+    Length:          10
+    ReplacementText: CL_SYCL_LANGUAGE_VERSION
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          2177
+    Length:          0
+    ReplacementText: '      /*
+      DPCT1003:12: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
+      */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          2193
+    Length:          15
+    ReplacementText: '(stream->memset'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          2237
+    Length:          8
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          2246
+    Length:          0
+    ReplacementText: ', 0)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          2463
+    Length:          10
+    ReplacementText: CL_SYCL_LANGUAGE_VERSION
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          2596
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          2609
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          2624
+    Length:          10
+    ReplacementText: CL_SYCL_LANGUAGE_VERSION
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          2708
+    Length:          10
+    ReplacementText: CL_SYCL_LANGUAGE_VERSION
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3484
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3497
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3512
+    Length:          10
+    ReplacementText: CL_SYCL_LANGUAGE_VERSION
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3629
+    Length:          10
+    ReplacementText: CL_SYCL_LANGUAGE_VERSION
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3704
+    Length:          68
+    ReplacementText: 'stream->submit(
+        [&](sycl::handler &cgh) {
+          cgh.parallel_for(
+            sycl::nd_range<3>(sycl::range<3>(1, 1, nblocks) * sycl::range<3>(1, 1, nthreads), sycl::range<3>(1, 1, nthreads)), 
+            [=](sycl::nd_item<3> item_ct1) {
+              countFromVector(h, nh, v, offsets, item_ct1);
+            });
+        });'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3772
+    Length:          1
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3774
+    Length:          0
+    ReplacementText: '      /*
+      DPCT1010:13: SYCL uses exceptions to report errors and does not use the error codes. The call was replaced with 0. You need to rewrite this code.
+      */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3790
+    Length:          18
+    ReplacementText: '0'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3854
+    Length:          67
+    ReplacementText: 'stream->submit(
+        [&](sycl::handler &cgh) {
+          cgh.parallel_for(
+            sycl::nd_range<3>(sycl::range<3>(1, 1, nblocks) * sycl::range<3>(1, 1, nthreads), sycl::range<3>(1, 1, nthreads)), 
+            [=](sycl::nd_item<3> item_ct1) {
+              fillFromVector(h, nh, v, offsets, item_ct1);
+            });
+        });'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3921
+    Length:          1
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3923
+    Length:          0
+    ReplacementText: '      /*
+      DPCT1010:14: SYCL uses exceptions to report errors and does not use the error codes. The call was replaced with 0. You need to rewrite this code.
+      */
+'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          3939
+    Length:          18
+    ReplacementText: '0'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          4118
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          4412
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          4421
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          4432
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          4554
+    Length:          40
+    ReplacementText: 'sycl::min(int(Hist::nbins() - 1), bs + n)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          4603
+    Length:          19
+    ReplacementText: 'sycl::max(0, bs - n)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          4844
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          4853
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          4864
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          6552
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          6593
+    Length:          10
+    ReplacementText: CL_SYCL_LANGUAGE_VERSION
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7025
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7034
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7103
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7112
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7212
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7368
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7377
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7388
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7450
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7475
+    Length:          16
+    ReplacementText: 'sycl::atomic<HistoContainer::Counter>(sycl::global_ptr<HistoContainer::Counter>(&x)).fetch_add(1)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7579
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7588
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7599
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7661
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7686
+    Length:          16
+    ReplacementText: 'sycl::atomic<HistoContainer::Counter>(sycl::global_ptr<HistoContainer::Counter>(&x)).fetch_sub(1)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7783
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7792
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7803
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7904
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7913
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          7924
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8087
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8098
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8107
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8384
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8395
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8404
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8513
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8524
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8533
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8599
+    Length:          0
+    ReplacementText: ', sycl::nd_item<3> item_ct1'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8783
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8796
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8809
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8867
+    Length:          9
+    ReplacementText: 'item_ct1.get_group_range(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8879
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range().get(2)'
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8924
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8933
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          8944
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9064
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9073
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9084
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9266
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9275
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9286
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9468
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9477
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9488
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9732
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9743
+    Length:          9
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9752
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9782
+    Length:          0
+    ReplacementText: 'sycl::nd_item<3> item_ct1, '
+  - FilePath:        '/afs/cern.ch/user/l/lcappell/pixeltrack-standalone/src/cuda/CUDACore/HistoContainer.h'
+    Offset:          9882
+    Length:          0
+    ReplacementText: ', item_ct1'
+...
