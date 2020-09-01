@@ -1,3 +1,0 @@
-kokkostest_EXTERNAL_DEPENDS := TBB CUDA KOKKOS
-Test1_DEPENDS := Framework DataFormats KokkosCore CUDACore
-Test2_DEPENDS := Framework KokkosCore CUDACore
