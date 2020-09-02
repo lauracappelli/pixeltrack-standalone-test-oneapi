@@ -7,7 +7,7 @@
 #include <cstdio>
 #include <tuple>
 
-#include "CUDACore/cuda_assert.h"
+//#include "CUDACore/cuda_assert.h"
 
 struct SiPixelGainForHLTonGPU_DecodingStructure {
   uint8_t gain;

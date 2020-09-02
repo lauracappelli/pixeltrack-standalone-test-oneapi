@@ -26,7 +26,7 @@ export LIB_DIR := $(BASE_DIR)/lib
 export TEST_DIR := $(BASE_DIR)/test
 
 # System external definitions
-CUDA_BASE := /usr/local/cuda
+CUDA_BASE := /usr/local/cuda-10.2
 CUDA_LIBDIR := $(CUDA_BASE)/lib64
 USER_CUDAFLAGS :=
 export CUDA_DEPS := $(CUDA_BASE)/lib64/libcudart.so

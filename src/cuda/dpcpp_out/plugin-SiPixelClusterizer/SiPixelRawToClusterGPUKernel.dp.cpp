@@ -24,11 +24,11 @@
 // cub includes
 
 // CMSSW includes
-#include "../CUDADataFormats/gpuClusteringConstants.h"
+/*#include "../CUDADataFormats/gpuClusteringConstants.h"
 #include "../CUDACore/cudaCheck.h"
 #include "../CUDACore/device_unique_ptr.h"
 #include "../CUDACore/host_unique_ptr.h"
-
+*/
 #include "../CondFormats/SiPixelFedCablingMapGPU.h"
 
 #include "gpuCalibPixel.h"
@@ -157,45 +157,31 @@ namespace pixelgpudetails {
     switch (status) {
       case (1): {
         if (debug)
-          /*
-          DPCT1015:28: Output needs adjustment.
-          */
           stream_ct1 << "Error in Fed: %i, invalid channel Id (errorType = 35\n)" << cl::sycl::endl;
         errorType = 35;
         break;
       }
       case (2): {
         if (debug)
-          /*
-          DPCT1015:29: Output needs adjustment.
-          */
           stream_ct1 << "Error in Fed: %i, invalid ROC Id (errorType = 36)\n" << cl::sycl::endl;
         errorType = 36;
         break;
       }
       case (3): {
         if (debug)
-          /*
-          DPCT1015:30: Output needs adjustment.
-          */
+
           stream_ct1 << "Error in Fed: %i, invalid dcol/pixel value (errorType = 37)\n" << cl::sycl::endl;
         errorType = 37;
         break;
       }
       case (4): {
         if (debug)
-          /*
-          DPCT1015:31: Output needs adjustment.
-          */
           stream_ct1 << "Error in Fed: %i, dcol/pixel read out of order (errorType = 38)\n" << cl::sycl::endl;
         errorType = 38;
         break;
       }
       default:
         if (debug)
-          /*
-          DPCT1015:32: Output needs adjustment.
-          */
           stream_ct1 << "Cabling check returned unexpected result, status = %i\n" << cl::sycl::endl;
     };
 
@@ -481,9 +467,6 @@ namespace pixelgpudetails {
           uint8_t error = conversionError(fedId, 3, stream_ct1, debug);
           err->push_back(PixelErrorCompact{rawId, ww, error, fedId});
           if (debug)
-            /*
-            DPCT1015:34: Output needs adjustment.
-            */
             stream_ct1 << "Error status: %i %d %d %d %d\n" << cl::sycl::endl;
           continue;
         }
@@ -587,15 +570,11 @@ namespace pixelgpudetails {
       /*
       DPCT1003:35: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      if((stream->memcpy(word_d.get(), wordFed.word(), wordCounter * sizeof(uint32_t)))!=0){
-	      std::cout << "Errore!" << std::endl;
-      }
+      stream->memcpy(word_d.get(), wordFed.word(), wordCounter * sizeof(uint32_t))
       /*
       DPCT1003:36: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      if((stream->memcpy(fedId_d.get(), wordFed.fedId(), wordCounter * sizeof(uint8_t) / 2))!= 0){
-	      std::cout << "Errore!" << std::endl;
-      }
+      stream->memcpy(fedId_d.get(), wordFed.fedId(), wordCounter * sizeof(uint8_t) / 2)
 
       // Launch rawToDigi kernel
       stream->submit([&](sycl::handler &cgh) {
@@ -639,6 +618,7 @@ namespace pixelgpudetails {
       */
       //cudaCheck(0);
 #ifdef GPU_DEBUG
+      item_ct1.barrier();
       //cudaDeviceSynchronize();			!! DA MODIFICARE
       //cudaCheck(cudaGetLastError());
 #endif
@@ -689,6 +669,7 @@ namespace pixelgpudetails {
       */
       //cudaCheck(0);
 #ifdef GPU_DEBUG
+      item_ct1.barrier();
       //cudaDeviceSynchronize();      		!! DA MODIFICARE
       //cudaCheck(cudaGetLastError());
 #endif
@@ -721,8 +702,7 @@ namespace pixelgpudetails {
       /*
       DPCT1003:40: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      if((stream->memcpy(&(nModules_Clusters_h[0]), clusters_d.moduleStart(), sizeof(uint32_t)))!= 0){
-	      std::cout << "Errore!" << std::cout;
+      stream->memcpy(&(nModules_Clusters_h[0]), clusters_d.moduleStart(), sizeof(uint32_t))
 	}
 
       threadsPerBlock = 256;
@@ -774,6 +754,7 @@ namespace pixelgpudetails {
       */
       //cudaCheck(0);
 #ifdef GPU_DEBUG
+      item_ct1.barrier();
       //cudaDeviceSynchronize();
       //cudaCheck(cudaGetLastError());
 #endif
@@ -855,6 +836,7 @@ namespace pixelgpudetails {
 	}
 
 #ifdef GPU_DEBUG
+      item_ct1.barrier();
       //cudaDeviceSynchronize();
       //cudaCheck(cudaGetLastError());
 #endif

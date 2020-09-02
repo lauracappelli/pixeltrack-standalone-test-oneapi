@@ -87,6 +87,7 @@ namespace oneapi {
     return (row << thePacking.row_shift) | (col << thePacking.column_shift) | (adc << thePacking.adc_shift);
   }
 
+ // DA QUA
   uint32_t getLink(uint32_t ww) { return ((ww >> pixelgpudetails::LINK_shift) & pixelgpudetails::LINK_mask); }
 
   uint32_t getRoc(uint32_t ww) { return ((ww >> pixelgpudetails::ROC_shift) & pixelgpudetails::ROC_mask); }
@@ -490,6 +491,7 @@ namespace oneapi {
     }  // end of loop (gIndex < end)
 
   }  // end of Raw to Digi kernel
+//A QUA
 
   class rawtodigi_kernel_;
 
