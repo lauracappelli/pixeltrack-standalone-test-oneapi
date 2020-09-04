@@ -9,6 +9,8 @@
 #include "modules.h"
 #include "output.h"
 #include "rawtodigi_oneapi.h"
+#include "cute/gpuClusteringConstants.h"
+#include "cute/prefixScan.h"
 
 // For host compilation use the standard implementation.
 #ifdef __SYCL_DEVICE_ONLY__
@@ -553,8 +555,8 @@ namespace oneapi {
       moduleStart[i + 1] = sycl::min(gpuClustering::maxHitsInModule(), (const unsigned int)(cluStart[i]));
     }
 
-    blockPrefixScan(moduleStart + 1, moduleStart + 1, 1024, item_ct1, ws);
-    blockPrefixScan(moduleStart + 1025, moduleStart + 1025, gpuClustering::MaxNumModules - 1024, item_ct1, ws);
+    cms::cuda::blockPrefixScan(moduleStart + 1, moduleStart + 1, 1024, ws, item_ct1);
+    cms::cuda::blockPrefixScan(moduleStart + 1025, moduleStart + 1025, gpuClustering::MaxNumModules - 1024, ws, item_ct1);
 
     for (int i = first + 1025, iend = gpuClustering::MaxNumModules + 1; i < iend;
          i += item_ct1.get_local_range().get(2)) {
@@ -591,7 +593,7 @@ namespace oneapi {
 
 //FUNZIONE COPIATA DAL CT
     // Interface to outside
-  void SiPixelRawToClusterGPUKernel::makeClustersAsync(const SiPixelFedCablingMapGPU *cablingMap,
+  void makeClustersAsync(const SiPixelFedCablingMapGPU *cablingMap,
                                                        const unsigned char *modToUnp,
                                                        const SiPixelGainForHLTonGPU *gains,
                                                        const WordFedAppender &wordFed,
