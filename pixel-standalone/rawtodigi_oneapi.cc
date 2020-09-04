@@ -541,9 +541,10 @@ namespace oneapi {
 //FUNZIONE COPIATA DAL CT
   void fillHitsModuleStart(uint32_t const *__restrict__ cluStart, uint32_t *__restrict__ moduleStart,
                            sycl::nd_item<3> item_ct1, uint32_t *ws) {
+    
     assert(gpuClustering::MaxNumModules < 2048);  // easy to extend at least till 32*1024
-    assert(1 == gridDim.x);
-    assert(0 == blockIdx.x);
+    assert(1 == item_ct1.get_group_range(2));
+    assert(0 == item_ct1.get_group(2));
 
     int first = item_ct1.get_local_id(2);
 
