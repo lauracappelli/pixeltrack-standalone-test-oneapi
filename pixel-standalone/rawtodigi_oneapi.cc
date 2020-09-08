@@ -12,7 +12,6 @@
 #include "cute/gpuClusteringConstants.h"
 #include "cute/prefixScan.h"
 #include "cute/device_unique_ptr.h"
-#include "cute/PixelErrors.h"
 
 // For host compilation use the standard implementation.
 #ifdef __SYCL_DEVICE_ONLY__
@@ -769,7 +768,7 @@ namespace oneapi {
 	}
 
       auto threadsPerBlock = 256;
-      blocks = MaxNumModules;
+      auto blocks = MaxNumModules;
 #ifdef GPU_DEBUG
       std::cout << "CUDA findClus kernel launch with " << blocks << " blocks of " << threadsPerBlock << " threads" << std::endl;
 #endif

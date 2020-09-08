@@ -2,6 +2,7 @@
 #define pixelgpudetails_h_
 
 #include <cstdint>
+#include "cute/SiPixelRawDataError.h"
 
 namespace pixelgpudetails {
   // Maximum fed for phase1 is 150 but not all of them are filled
@@ -96,5 +97,7 @@ struct PixelErrorCompact {
   unsigned char errorType;
   unsigned char fedId;
 };
+
+using PixelFormatterErrors = std::map<uint32_t, std::vector<SiPixelRawDataError>>;
 
 #endif  // pixelgpudetails_h_

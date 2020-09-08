@@ -14,10 +14,10 @@
 #ifdef CL_SYCL_LANGUAGE_VERSION
 #endif
 
-#include "CUDACore/AtomicPairCounter.h"
+#include "AtomicPairCounter.h"
 //#include "CUDACore/cuda_assert.h"
-#include "CUDACore/cudastdAlgorithm.h"
-#include "CUDACore/prefixScan.h"
+#include "cudastdAlgorithm.h"
+#include "prefixScan.h"
 
 namespace cms {
   namespace cuda {
