@@ -11,6 +11,10 @@
 #include "rawtodigi_oneapi.h"
 #include "cute/gpuClusteringConstants.h"
 #include "cute/prefixScan.h"
+#include "cute/device_unique_ptr.h"
+#include "cute/PixelErrors.h"
+#include "cute/SiPixelGainForHLTonGPU.h"
+#include "cute/SiPixelRawToClusterGPUKernel.h"
 
 // For host compilation use the standard implementation.
 #ifdef __SYCL_DEVICE_ONLY__
@@ -604,19 +608,19 @@ namespace oneapi {
                                                        bool includeErrors,
                                                        bool debug,
                                                        sycl::queue *stream) {
-    nDigis = wordCounter;
+    auto nDigis = wordCounter;
 
 #ifdef GPU_DEBUG
     std::cout << "decoding " << wordCounter << " digis. Max is " << pixelgpudetails::MAX_FED_WORDS << std::endl;
 #endif
 
-    digis_d = SiPixelDigisCUDA(pixelgpudetails::MAX_FED_WORDS, stream);
+    auto digis_d = SiPixelDigisCUDA(pixelgpudetails::MAX_FED_WORDS, stream);
     if (includeErrors) {
-      digiErrors_d = SiPixelDigiErrorsCUDA(pixelgpudetails::MAX_FED_WORDS, std::move(errors), stream);
+      auto digiErrors_d = SiPixelDigiErrorsCUDA(pixelgpudetails::MAX_FED_WORDS, std::move(errors), stream);
     }
-    clusters_d = SiPixelClustersCUDA(gpuClustering::MaxNumModules, stream);
+    auto clusters_d = SiPixelClustersCUDA(gpuClustering::MaxNumModules, stream);
 
-    nModules_Clusters_h = cms::cuda::make_host_unique<uint32_t[]>(2, stream);
+    auto nModules_Clusters_h = cms::cuda::make_host_unique<uint32_t[]>(2, stream);
 
     if (wordCounter)  // protect in case of empty event....
     {
@@ -766,7 +770,7 @@ namespace oneapi {
       stream->memcpy(&(nModules_Clusters_h[0]), clusters_d.moduleStart(), sizeof(uint32_t))
 	}
 
-      threadsPerBlock = 256;
+      auto threadsPerBlock = 256;
       blocks = MaxNumModules;
 #ifdef GPU_DEBUG
       std::cout << "CUDA findClus kernel launch with " << blocks << " blocks of " << threadsPerBlock << " threads" << std::endl;
