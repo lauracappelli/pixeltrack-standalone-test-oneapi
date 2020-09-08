@@ -18,7 +18,7 @@ namespace cms {
             /*
             DPCT1003:25: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
             */
-            void operator()(void *ptr) { sycl::free(ptr, dpct::get_default_queue()), 0; }
+            void operator()(void *ptr) { sycl::free(ptr, dpct::get_default_queue()); }
           };
         }  // namespace impl
 
@@ -55,7 +55,7 @@ namespace cms {
       /*
       DPCT1003:26: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      cudaCheck((mem = (void *)sycl::malloc_host(sizeof(T), dpct::get_default_queue()), 0));
+      mem = (void *)sycl::malloc_host(sizeof(T), dpct::get_default_queue());
       return typename host::noncached::impl::make_host_unique_selector<T>::non_array(reinterpret_cast<T *>(mem));
     }
 
@@ -69,7 +69,7 @@ namespace cms {
       /*
       DPCT1003:27: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      cudaCheck((mem = (void *)sycl::malloc_host(n * sizeof(element_type), dpct::get_default_queue()), 0));
+      mem = (void *)sycl::malloc_host(n * sizeof(element_type), dpct::get_default_queue());
       return typename host::noncached::impl::make_host_unique_selector<T>::unbounded_array(
           reinterpret_cast<element_type *>(mem));
     }

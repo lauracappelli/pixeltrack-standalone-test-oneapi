@@ -2,6 +2,7 @@
 #define pixelgpudetails_h_
 
 #include <cstdint>
+#include <map>
 #include "cute/SiPixelRawDataError.h"
 
 namespace pixelgpudetails {

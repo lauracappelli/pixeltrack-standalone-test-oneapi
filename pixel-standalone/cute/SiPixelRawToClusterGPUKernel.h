@@ -8,16 +8,16 @@
 #include "SiPixelDigisCUDA.h"
 #include "SiPixelDigiErrorsCUDA.h"
 #include "SiPixelClustersCUDA.h"
-#include "GPUSimpleVector.h"
+#include "../GPUSimpleVector.h"
 #include "host_unique_ptr.h"
 #include "host_noncached_unique_ptr.h"
-#include "PixelErrors.h"
+#include "../pixelgpudetails.h"
 
 struct SiPixelFedCablingMapGPU;
 class SiPixelGainForHLTonGPU;
 
 namespace pixelgpudetails {
-
+/*
   // Phase 1 geometry constants
   const uint32_t layerStartBit = 20;
   const uint32_t ladderStartBit = 12;
@@ -83,7 +83,7 @@ namespace pixelgpudetails {
     uint32_t row;
     uint32_t col;
   };
-
+*/
   class Packing {
   public:
     using PackedDigiType = uint32_t;

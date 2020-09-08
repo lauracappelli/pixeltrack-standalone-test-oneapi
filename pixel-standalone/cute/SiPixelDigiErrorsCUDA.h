@@ -3,10 +3,10 @@
 
 #include <CL/sycl.hpp>
 #include <dpct/dpct.hpp>
-#include "PixelErrors.h"
+#include "../pixelgpudetails.h"
 #include "device_unique_ptr.h"
 #include "host_unique_ptr.h"
-#include "GPUSimpleVector.h"
+#include "../GPUSimpleVector.h"
 
 class SiPixelDigiErrorsCUDA {
 public:
