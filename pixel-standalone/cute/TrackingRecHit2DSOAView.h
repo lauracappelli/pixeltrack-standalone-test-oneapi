@@ -1,24 +1,26 @@
 #ifndef CUDADataFormats_TrackingRecHit_interface_TrackingRecHit2DSOAView_h
 #define CUDADataFormats_TrackingRecHit_interface_TrackingRecHit2DSOAView_h
 
-#include <cuda_runtime.h>
+//#include <cuda_runtime.h>
 
-#include "gpuClusteringConstants.h"
+//#include "gpuClusteringConstants.h"
 #include "HistoContainer.h"
-#include "cudaCompat.h"
-#include "phase1PixelTopology.h"
+//#include "cudaCompat.h"
+//#include "phase1PixelTopology.h"
 
-namespace pixelCPEforGPU {
+/*namespace pixelCPEforGPU {
   struct ParamsOnGPU;
-}
+}*/
 
 class TrackingRecHit2DSOAView {
 public:
-  static constexpr uint32_t maxHits() { return gpuClustering::MaxNumClusters; }
+  /*static constexpr uint32_t maxHits() { return gpuClustering::MaxNumClusters; }
   using hindex_type = uint16_t;  // if above is <=2^16
+  */
 
   using Hist = HistoContainer<int16_t, 128, gpuClustering::MaxNumClusters, 8 * sizeof(int16_t), uint16_t, 10>;
 
+/*
   using AverageGeometry = phase1PixelTopology::AverageGeometry;
 
   template <typename>
@@ -95,6 +97,7 @@ private:
   Hist* m_hist;
 
   uint32_t m_nHits;
+  */
 };
 
 #endif

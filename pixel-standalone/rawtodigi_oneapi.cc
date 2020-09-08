@@ -19,6 +19,7 @@
 #include "cute/SiPixelClustersCUDA.h"
 #include "cute/host_unique_ptr.h"
 #include "cute/TrackingRecHit2DSOAView.h"
+#include "cute/gpuCalibPixel.h"
 
 // For host compilation use the standard implementation.
 #ifdef __SYCL_DEVICE_ONLY__
@@ -604,7 +605,7 @@ namespace oneapi {
   void makeClustersAsync(const SiPixelFedCablingMapGPU *cablingMap,
                                                        const unsigned char *modToUnp,
                                                        const SiPixelGainForHLTonGPU *gains,
-                                                       const WordFedAppender &wordFed,
+                                                       const pixelgpudetails::SiPixelRawToClusterGPUKernel::WordFedAppender &wordFed,
                                                        PixelFormatterErrors &&errors,
                                                        const uint32_t wordCounter,
                                                        const uint32_t fedCounter,
@@ -619,9 +620,9 @@ namespace oneapi {
 #endif
 
     auto digis_d = SiPixelDigisCUDA(pixelgpudetails::MAX_FED_WORDS, stream);
-    if (includeErrors) {
+    //if (includeErrors) {
       auto digiErrors_d = SiPixelDigiErrorsCUDA(pixelgpudetails::MAX_FED_WORDS, std::move(errors), stream);
-    }
+    //}
     auto clusters_d = SiPixelClustersCUDA(gpuClustering::MaxNumModules, stream);
 
     auto nModules_Clusters_h = cms::cuda::make_host_unique<uint32_t[]>(2, stream);
@@ -639,11 +640,11 @@ namespace oneapi {
       /*
       DPCT1003:35: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      stream->memcpy(word_d.get(), wordFed.word(), wordCounter * sizeof(uint32_t))
+      stream->memcpy(word_d.get(), wordFed.word(), wordCounter * sizeof(uint32_t));
       /*
       DPCT1003:36: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      stream->memcpy(fedId_d.get(), wordFed.fedId(), wordCounter * sizeof(uint8_t) / 2)
+      stream->memcpy(fedId_d.get(), wordFed.fedId(), wordCounter * sizeof(uint8_t) / 2);
 
       // Launch rawToDigi kernel
       stream->submit([&](sycl::handler &cgh) {
@@ -771,7 +772,7 @@ namespace oneapi {
       /*
       DPCT1003:40: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      stream->memcpy(&(nModules_Clusters_h[0]), clusters_d.moduleStart(), sizeof(uint32_t))
+      stream->memcpy(&(nModules_Clusters_h[0]), clusters_d.moduleStart(), sizeof(uint32_t));
 	}
 
       auto threadsPerBlock = 256;
@@ -784,8 +785,8 @@ namespace oneapi {
 
         // accessors to device memory
         sycl::accessor<int, 0, sycl::access::mode::read_write, sycl::access::target::local> msize_acc_ct1(cgh);
-        sycl::accessor<Hist, 0, sycl::access::mode::read_write, sycl::access::target::local> hist_acc_ct1(cgh);
-        sycl::accessor<typename Hist::Counter, 1, sycl::access::mode::read_write, sycl::access::target::local>
+        sycl::accessor<TrackingRecHit2DSOAView::Hist, 0, sycl::access::mode::read_write, sycl::access::target::local> hist_acc_ct1(cgh);
+        sycl::accessor<typename TrackingRecHit2DSOAView::Hist::Counter, 1, sycl::access::mode::read_write, sycl::access::target::local>
             ws_acc_ct1(sycl::range<1>(32), cgh);
         sycl::accessor<unsigned int, 0, sycl::access::mode::read_write, sycl::access::target::local>
             foundClusters_acc_ct1(cgh);
