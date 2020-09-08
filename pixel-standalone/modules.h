@@ -1,6 +1,9 @@
 #ifndef modules_h_
 #define modules_h_
 
+#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+
 namespace gpuClustering {
 constexpr uint32_t MaxNumModules = 2000;
 constexpr uint16_t InvId = 9999; // must be > MaxNumModules
