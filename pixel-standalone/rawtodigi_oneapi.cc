@@ -13,7 +13,6 @@
 #include "cute/prefixScan.h"
 #include "cute/device_unique_ptr.h"
 #include "cute/PixelErrors.h"
-#include "cute/SiPixelGainForHLTonGPU.h"
 
 // For host compilation use the standard implementation.
 #ifdef __SYCL_DEVICE_ONLY__

@@ -9,6 +9,8 @@
 
 #include "SiPixelRawDataError.h"
 
+#pragma once
+
 // Better ideas for the placement of these?
 
 struct PixelErrorCompact {
