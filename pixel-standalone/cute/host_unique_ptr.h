@@ -6,7 +6,7 @@
 #include <memory>
 #include <functional>
 
-#include "CUDACore/allocate_host.h"
+#include "allocate_host.h"
 
 #pragma once
 

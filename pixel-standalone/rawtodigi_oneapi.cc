@@ -14,7 +14,6 @@
 #include "cute/device_unique_ptr.h"
 #include "cute/PixelErrors.h"
 #include "cute/SiPixelGainForHLTonGPU.h"
-#include "cute/SiPixelRawToClusterGPUKernel.h"
 
 // For host compilation use the standard implementation.
 #ifdef __SYCL_DEVICE_ONLY__
