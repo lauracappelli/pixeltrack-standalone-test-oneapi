@@ -29,19 +29,21 @@
 #include "../CUDACore/device_unique_ptr.h"
 #include "../CUDACore/host_unique_ptr.h"
 */
-#include "../CondFormats/SiPixelFedCablingMapGPU.h"
+//#include "../CondFormats/SiPixelFedCablingMapGPU.h"
 
 #include "cute/gpuCalibPixel.h"
 #include "cute/gpuClusterChargeCut.h"
 #include "cute/gpuClustering.h"
 
 // local includes
-#include "SiPixelRawToClusterGPUKernel.h"
+#include "cute/SiPixelRawToClusterGPUKernel.h"
+
+#define cudaHostAllocWriteCombined 0x04
 
 namespace pixelgpudetails {
 
   // number of words for all the FEDs
-  constexpr uint32_t MAX_FED_WORDS = pixelgpudetails::MAX_FED * pixelgpudetails::MAX_WORD;
+  //constexpr uint32_t MAX_FED_WORDS = pixelgpudetails::MAX_FED * pixelgpudetails::MAX_WORD;
 
   SiPixelRawToClusterGPUKernel::WordFedAppender::WordFedAppender() {
     word_ = cms::cuda::make_host_noncached_unique<unsigned int[]>(MAX_FED_WORDS, cudaHostAllocWriteCombined);
@@ -248,7 +250,7 @@ namespace pixelgpudetails {
       }
       case (30): {
         if (debug)
-          stream_ct1 << "TBM error trailer (errorType = 30)\n" cl::sycl::endl;
+          stream_ct1 << "TBM error trailer (errorType = 30)\n" << cl::sycl::endl;
         int StateMatch_bits = 4;
         int StateMatch_shift = 8;
         uint32_t StateMatch_mask = ~(~uint32_t(0) << StateMatch_bits);
@@ -486,8 +488,8 @@ namespace pixelgpudetails {
   void fillHitsModuleStart(uint32_t const *__restrict__ cluStart, uint32_t *__restrict__ moduleStart,
                            sycl::nd_item<3> item_ct1, uint32_t *ws) {
     assert(gpuClustering::MaxNumModules < 2048);  // easy to extend at least till 32*1024
-    assert(1 == gridDim.x);
-    assert(0 == blockIdx.x);
+    //assert(1 == gridDim.x);
+    //assert(0 == blockIdx.x);
 
     int first = item_ct1.get_local_id(2);
 
@@ -496,8 +498,8 @@ namespace pixelgpudetails {
       moduleStart[i + 1] = sycl::min(gpuClustering::maxHitsInModule(), (const unsigned int)(cluStart[i]));
     }
 
-    blockPrefixScan(moduleStart + 1, moduleStart + 1, 1024, item_ct1, ws);
-    blockPrefixScan(moduleStart + 1025, moduleStart + 1025, gpuClustering::MaxNumModules - 1024, item_ct1, ws);
+    cms::cuda::blockPrefixScan(moduleStart + 1, moduleStart + 1, 1024, ws, item_ct1);
+    cms::cuda::blockPrefixScan(moduleStart + 1025, moduleStart + 1025, gpuClustering::MaxNumModules - 1024, ws, item_ct1);
 
     for (int i = first + 1025, iend = gpuClustering::MaxNumModules + 1; i < iend;
          i += item_ct1.get_local_range().get(2)) {
@@ -570,11 +572,11 @@ namespace pixelgpudetails {
       /*
       DPCT1003:35: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      stream->memcpy(word_d.get(), wordFed.word(), wordCounter * sizeof(uint32_t))
+      stream->memcpy(word_d.get(), wordFed.word(), wordCounter * sizeof(uint32_t));
       /*
       DPCT1003:36: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      stream->memcpy(fedId_d.get(), wordFed.fedId(), wordCounter * sizeof(uint8_t) / 2)
+      stream->memcpy(fedId_d.get(), wordFed.fedId(), wordCounter * sizeof(uint8_t) / 2);
 
       // Launch rawToDigi kernel
       stream->submit([&](sycl::handler &cgh) {
@@ -651,7 +653,7 @@ namespace pixelgpudetails {
         cgh.parallel_for(sycl::nd_range<3>(sycl::range<3>(1, 1, blocks) * sycl::range<3>(1, 1, threadsPerBlock),
                                            sycl::range<3>(1, 1, threadsPerBlock)),
                          [=](sycl::nd_item<3> item_ct1) {
-                           calibDigis(digis_d_moduleInd_ct0,
+			 gpuCalibPixel::calibDigis(digis_d_moduleInd_ct0,
                                       digis_d_c_xx_ct1,
                                       digis_d_c_yy_ct2,
                                       digis_d_adc_ct3,
@@ -702,11 +704,11 @@ namespace pixelgpudetails {
       /*
       DPCT1003:40: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      stream->memcpy(&(nModules_Clusters_h[0]), clusters_d.moduleStart(), sizeof(uint32_t))
+      stream->memcpy(&(nModules_Clusters_h[0]), clusters_d.moduleStart(), sizeof(uint32_t));
 	}
 
-      threadsPerBlock = 256;
-      blocks = MaxNumModules;
+      auto threadsPerBlock = 256;
+      auto blocks = gpuClustering::MaxNumModules;
 #ifdef GPU_DEBUG
       std::cout << "CUDA findClus kernel launch with " << blocks << " blocks of " << threadsPerBlock << " threads" << std::endl;
 #endif
@@ -715,8 +717,8 @@ namespace pixelgpudetails {
 
         // accessors to device memory
         sycl::accessor<int, 0, sycl::access::mode::read_write, sycl::access::target::local> msize_acc_ct1(cgh);
-        sycl::accessor<Hist, 0, sycl::access::mode::read_write, sycl::access::target::local> hist_acc_ct1(cgh);
-        sycl::accessor<typename Hist::Counter, 1, sycl::access::mode::read_write, sycl::access::target::local>
+        sycl::accessor<TrackingRecHit2DSOAView::Hist, 0, sycl::access::mode::read_write, sycl::access::target::local> hist_acc_ct1(cgh);
+        sycl::accessor<typename TrackingRecHit2DSOAView::Hist::Counter, 1, sycl::access::mode::read_write, sycl::access::target::local>
             ws_acc_ct1(sycl::range<1>(32), cgh);
         sycl::accessor<unsigned int, 0, sycl::access::mode::read_write, sycl::access::target::local>
             foundClusters_acc_ct1(cgh);
@@ -733,7 +735,7 @@ namespace pixelgpudetails {
         cgh.parallel_for(sycl::nd_range<3>(sycl::range<3>(1, 1, blocks) * sycl::range<3>(1, 1, threadsPerBlock),
                                            sycl::range<3>(1, 1, threadsPerBlock)),
                          [=](sycl::nd_item<3> item_ct1) {
-                           findClus(digis_d_c_moduleInd_ct0,
+			 gpuClustering::findClus(digis_d_c_moduleInd_ct0,
                                     digis_d_c_xx_ct1,
                                     digis_d_c_yy_ct2,
                                     clusters_d_c_moduleStart_ct3,
@@ -784,7 +786,7 @@ namespace pixelgpudetails {
         cgh.parallel_for(sycl::nd_range<3>(sycl::range<3>(1, 1, blocks) * sycl::range<3>(1, 1, threadsPerBlock),
                                            sycl::range<3>(1, 1, threadsPerBlock)),
                          [=](sycl::nd_item<3> item_ct1) {
-                           clusterChargeCut(digis_d_moduleInd_ct0,
+			 gpuClustering::clusterChargeCut(digis_d_moduleInd_ct0,
                                             digis_d_c_adc_ct1,
                                             clusters_d_c_moduleStart_ct2,
                                             clusters_d_clusInModule_ct3,
@@ -830,10 +832,8 @@ namespace pixelgpudetails {
       /*
       DPCT1003:43: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      if((stream->memcpy(
-              &(nModules_Clusters_h[1]), clusters_d.clusModuleStart() + gpuClustering::MaxNumModules, sizeof(uint32_t))!=0){
-		      std::cout << "Errore" << std::endl;      
-	}
+      stream->memcpy(
+              &(nModules_Clusters_h[1]), clusters_d.clusModuleStart() + gpuClustering::MaxNumModules, sizeof(uint32_t));
 
 #ifdef GPU_DEBUG
       item_ct1.barrier();
@@ -843,4 +843,4 @@ namespace pixelgpudetails {
 
     }  // end clusterizer scope
   }
-}  // namespace pixelgpudetails
+//}  // namespace pixelgpudetails

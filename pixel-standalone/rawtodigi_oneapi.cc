@@ -20,6 +20,7 @@
 #include "cute/host_unique_ptr.h"
 #include "cute/TrackingRecHit2DSOAView.h"
 #include "cute/gpuCalibPixel.h"
+#include "SiPixelRawToClusterGPUKernel.dp.cpp"
 
 // For host compilation use the standard implementation.
 #ifdef __SYCL_DEVICE_ONLY__
@@ -492,7 +493,7 @@ namespace oneapi {
         }
       }
 
-      pixelgpudetails::Pixel globalPix = frameConversion(barrel, side, layer, rocIdInDetUnit, localPix);
+      pixelgpudetails::Pixel globalPix = pixelgpudetails::frameConversion(barrel, side, layer, rocIdInDetUnit, localPix);
       xx[gIndex] = globalPix.row;  // origin shifting by 1 0-159
       yy[gIndex] = globalPix.col;  // origin shifting by 1 0-415
       adc[gIndex] = getADC(ww);
@@ -664,7 +665,7 @@ namespace oneapi {
         cgh.parallel_for(sycl::nd_range<3>(sycl::range<3>(1, 1, blocks) * sycl::range<3>(1, 1, threadsPerBlock),
                                            sycl::range<3>(1, 1, threadsPerBlock)),
                          [=](sycl::nd_item<3> item_ct1) {
-                           RawToDigi_kernel(cablingMap,
+			 pixelgpudetails::RawToDigi_kernel(cablingMap,
                                             modToUnp,
                                             wordCounter,
                                             word_d_get_ct3,
@@ -854,7 +855,7 @@ namespace oneapi {
         cgh.parallel_for(sycl::nd_range<3>(sycl::range<3>(1, 1, blocks) * sycl::range<3>(1, 1, threadsPerBlock),
                                            sycl::range<3>(1, 1, threadsPerBlock)),
                          [=](sycl::nd_item<3> item_ct1) {
-                           gpuClusterChargeCut::clusterChargeCut(digis_d_moduleInd_ct0,
+			 gpuClustering::clusterChargeCut(digis_d_moduleInd_ct0,
                                             digis_d_c_adc_ct1,
                                             clusters_d_c_moduleStart_ct2,
                                             clusters_d_clusInModule_ct3,
@@ -900,10 +901,8 @@ namespace oneapi {
       /*
       DPCT1003:43: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       */
-      if((stream->memcpy(
-              &(nModules_Clusters_h[1]), clusters_d.clusModuleStart() + gpuClustering::MaxNumModules, sizeof(uint32_t)))!=0){
-		      std::cout << "Errore" << std::endl;      
-	}
+      stream->memcpy(
+              &(nModules_Clusters_h[1]), clusters_d.clusModuleStart() + gpuClustering::MaxNumModules, sizeof(uint32_t));
 
 #ifdef GPU_DEBUG
       item_ct1.barrier();

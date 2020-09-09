@@ -335,9 +335,9 @@ public:
     bins[w - 1] = j;
   }
 
-  __dpct_inline__ void finalize(sycl::nd_item<3> item_ct1, Counter *ws = nullptr) {
+  __dpct_inline__ SYCL_EXTERNAL void finalize(sycl::nd_item<3> item_ct1, Counter *ws = nullptr) {
     assert(off[totbins() - 1] == 0);
-    blockPrefixScan(off, totbins(), ws, item_ct1);
+    cms::cuda::blockPrefixScan(off, totbins(), ws, item_ct1);
     assert(off[totbins() - 1] == off[totbins() - 2]);
   }
 

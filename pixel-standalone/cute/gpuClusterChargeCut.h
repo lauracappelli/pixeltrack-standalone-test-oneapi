@@ -33,11 +33,11 @@ namespace gpuClustering {
     auto firstPixel = moduleStart[1 + item_ct1.get_group(2)];
     auto thisModuleId = id[firstPixel];
     if(!(thisModuleId < MaxNumModules)){
-      stream_ct1 << "error file gpuClusterChargeCut.h" << std::endl;
+      stream_ct1 << "error file gpuClusterChargeCut.h";
     };
-    if(!(thisModuleId == moduleId[blockIdx.x])){
+    /*if(!(thisModuleId == moduleId[blockIdx.x])){
       stream_ct1 << "error file gpuClusterChargeCut.h" << std::endl;
-    };
+    };*/
 
     auto nclus = nClustersInModule[thisModuleId];
     if (nclus == 0)
@@ -97,7 +97,7 @@ namespace gpuClustering {
 
     // renumber
 
-    blockPrefixScan(newclusId, nclus, ws, item_ct1);
+    cms::cuda::blockPrefixScan(newclusId, nclus, ws, item_ct1);
 
     assert(nclus >= newclusId[nclus - 1]);
 

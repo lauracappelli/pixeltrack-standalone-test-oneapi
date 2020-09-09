@@ -34,14 +34,14 @@ void countModules(uint16_t const *__restrict__ id,
   for (int i = first; i < numElements;
        i += item_ct1.get_group_range(2) * item_ct1.get_local_range().get(2)) {
     clusterId[i] = i;
-    if (InvId == id[i])
+    if (gpuClustering::InvId == id[i])
       continue;
     auto j = i - 1;
-    while (j >= 0 and id[j] == InvId)
+    while (j >= 0 and id[j] == gpuClustering::InvId)
       --j;
     if (j < 0 or id[j] != id[i]) {
       // boundary...
-      auto loc = dpct::atomic_fetch_compare_inc(moduleStart, MaxNumModules);
+      auto loc = dpct::atomic_fetch_compare_inc(moduleStart, gpuClustering::MaxNumModules);
       moduleStart[loc + 1] = i;
     }
   }

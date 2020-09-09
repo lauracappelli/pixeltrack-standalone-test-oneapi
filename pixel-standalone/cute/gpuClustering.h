@@ -18,6 +18,7 @@ namespace gpuClustering {
 __device__ uint32_t gMaxHit = 0;
 #endif
 
+/*
 void countModules(uint16_t const *__restrict__ id,
                   uint32_t *__restrict__ moduleStart,
                   int32_t *__restrict__ clusterId, int numElements,
@@ -38,7 +39,7 @@ void countModules(uint16_t const *__restrict__ id,
       moduleStart[loc + 1] = i;
     }
   }
-}
+}*/
 
 //  __launch_bounds__(256,4)
 void findClus(
@@ -52,7 +53,7 @@ void findClus(
     uint32_t *__restrict__ moduleId, // output: module id of each module
     int32_t *__restrict__ clusterId, // output: cluster id of each pixel
     int numElements, sycl::nd_item<3> item_ct1, sycl::stream stream_ct1,
-    int *msize, Hist *hist, typename Hist::Counter *ws,
+    int *msize, TrackingRecHit2DSOAView::Hist *hist, typename TrackingRecHit2DSOAView::Hist::Counter *ws,
     unsigned int *foundClusters) {
   if (item_ct1.get_group(2) >= moduleStart[0])
     return;
@@ -100,8 +101,8 @@ void findClus(
   }
   item_ct1.barrier();
 
-  if (!((msize == numElements) or
-        ((msize < numElements) and (id[msize] != thisModuleId)))) {
+  if (!((*msize == numElements) or
+        ((*msize < numElements) and (id[*msize] != thisModuleId)))) {
     stream_ct1 << "error file gpuClustering";
   }
 
@@ -118,8 +119,8 @@ void findClus(
   }
 
   item_ct1.barrier();
-  if (!(msize - firstPixel <= maxPixInModule)) {
-    stream_ct1 << "error file gpuClustering.h"
+  if (!(*msize - firstPixel <= maxPixInModule)) {
+    stream_ct1 << "error file gpuClustering.h";
   }
 
 #ifdef GPU_DEBUG
@@ -167,9 +168,9 @@ void findClus(
   // allocate space for duplicate pixels: a pixel can appear more than once with
   // different charge in the same event
   constexpr int maxNeighbours = 10;
-  if (!((hist.size() / blockDim.x) <= maxiter)) {
+ /* if (!((hist.size() / blockDim.x) <= maxiter)) {
     stream_ct1 << "error file gpuClustering";
-  }
+  }*/
   // nearest neighbour
   uint16_t nn[maxiter][maxNeighbours];
   uint8_t nnn[maxiter]; // number of nn
@@ -200,7 +201,7 @@ void findClus(
 #endif
 
   // fill NN
-  for (auto j = item_ct1.get_local_id(2), k = 0U; j < hist->size();
+  for (unsigned int j = item_ct1.get_local_id(2), k = 0U; j < hist->size();
        j += item_ct1.get_local_range().get(2), ++k) {
     if (!(k < maxiter)) {
       stream_ct1 << "error file gpuClustering";
@@ -249,7 +250,7 @@ void findClus(
   while (
       (item_ct1.barrier(), sycl::intel::any_of(item_ct1.get_group(), more))) {
     if (1 == nloops % 2) {
-      for (auto j = item_ct1.get_local_id(2), k = 0U; j < hist->size();
+      for (unsigned int j = item_ct1.get_local_id(2), k = 0U; j < hist->size();
            j += item_ct1.get_local_range().get(2), ++k) {
         auto p = hist->begin() + j;
         auto i = *p + firstPixel;
@@ -260,7 +261,7 @@ void findClus(
       }
     } else {
       more = false;
-      for (auto j = item_ct1.get_local_id(2), k = 0U; j < hist->size();
+      for (unsigned int j = item_ct1.get_local_id(2), k = 0U; j < hist->size();
            j += item_ct1.get_local_range().get(2), ++k) {
         auto p = hist->begin() + j;
         auto i = *p + firstPixel;

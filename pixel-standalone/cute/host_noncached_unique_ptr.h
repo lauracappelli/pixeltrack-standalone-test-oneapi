@@ -5,6 +5,8 @@
 #include <dpct/dpct.hpp>
 #include <memory>
 
+#define cudaHostAllocDefault 0
+
 //#include "CUDACore/cudaCheck.h"
 
 namespace cms {
