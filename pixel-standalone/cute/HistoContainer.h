@@ -76,7 +76,7 @@ namespace cms {
 #endif
     }
 
-    template <typename Histo>
+   /* template <typename Histo>
     inline void launchFinalize(Histo *__restrict__ h,
                                uint8_t *__restrict__ ws
 #ifndef CL_SYCL_LANGUAGE_VERSION
@@ -93,12 +93,13 @@ namespace cms {
       uint32_t *off = (uint32_t *)((char *)(h) + offsetof(Histo, off));
       size_t wss = Histo::wsSize();
       assert(wss > 0);
-      CubDebugExit(cub::DeviceScan::InclusiveSum(ws, wss, off, off, Histo::totbins(), stream));
+      //CubDebugExit(cub::DeviceScan::InclusiveSum(ws, wss, off, off, Histo::totbins(), stream));
+      //stream << "errore: l'inclusiveSum non è stata effettuata. Controllare il file HistoContainer.h" << sycl::flush;
 #else
       h->finalize();
 #endif
     }
-
+*/
     template <typename Histo, typename T>
     inline void fillManyFromVector(Histo *__restrict__ h,
                                    uint8_t *__restrict__ ws,
@@ -212,18 +213,19 @@ public:
 
   static constexpr auto histOff(uint32_t nh) { return NBINS * nh; }
 
-  static size_t wsSize() {
+  /*static size_t wsSize() {
 #ifdef CL_SYCL_LANGUAGE_VERSION
     uint32_t *v = nullptr;
     void *d_temp_storage = nullptr;
     size_t temp_storage_bytes = 0;
-    cub::DeviceScan::InclusiveSum(d_temp_storage, temp_storage_bytes, v, v, totbins());
+    //cub::DeviceScan::InclusiveSum(d_temp_storage, temp_storage_bytes, v, v, totbins());
+    
     return temp_storage_bytes;
 #else
     return 0;
 #endif
   }
-
+*/
   static constexpr UT bin(T t) {
     constexpr uint32_t shift = sizeT() - nbits();
     constexpr uint32_t mask = (1 << nbits()) - 1;
