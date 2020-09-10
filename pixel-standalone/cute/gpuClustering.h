@@ -312,7 +312,7 @@ void findClus(
       continue;
     if (clusterId[i] == i) {
       auto old = dpct::atomic_fetch_compare_inc<
-          unsigned int, sycl::access::address_space::local_space>(foundClusters,
+          sycl::access::address_space::local_space>(foundClusters,
                                                                   0xffffffff);
       clusterId[i] = -(old + 1);
     }

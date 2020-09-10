@@ -29,7 +29,7 @@ DPCT_BASE   := /opt/intel/oneapi/dpcpp-ct/latest
 
 # host compiler
 CXX := g++
-CXX_FLAGS := -O2 -std=c++14
+CXX_FLAGS := -O2 -std=c++17
 CXX_DEBUG := -g
 OMP_CXX_FLAGS := -fopenmp -foffload=disable
 OMP_LD_FLAGS  := -fopenmp -foffload=disable
