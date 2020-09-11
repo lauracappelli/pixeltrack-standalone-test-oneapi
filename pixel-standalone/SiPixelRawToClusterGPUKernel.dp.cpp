@@ -19,6 +19,12 @@
 #include <iostream>
 #include <string>
 
+#include "cute/SiPixelDigisCUDA.h"
+#include "cute/SiPixelDigiErrorsCUDA.h"
+#include "cute/SiPixelClustersCUDA.h"
+#include "cute/allocate_device.h"
+#include "cute/allocate_host.h"
+
 // CUDA includes
 
 // cub includes
