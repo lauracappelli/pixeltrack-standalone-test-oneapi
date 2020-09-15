@@ -95,7 +95,7 @@ void findClus(
   constexpr auto nbins = phase1PixelTopology::numColsInModule + 2; // 2+2;
   using Hist = HistoContainer<uint16_t, nbins, maxPixInModule, 9, uint16_t>;
 
-  for (auto j = item_ct1.get_local_id(2); j < Hist::totbins();
+  for (auto j = item_ct1.get_local_id(2); j < HistoContainer::totbins();
        j += item_ct1.get_local_range().get(2)) {
     hist->off[j] = 0;
   }
@@ -184,7 +184,7 @@ void findClus(
   __shared__ uint32_t n40, n60;
   n40 = n60 = 0;
   __syncthreads();
-  for (auto j = threadIdx.x; j < Hist::nbins(); j += blockDim.x) {
+  for (auto j = threadIdx.x; j < HistoContainer::nbins(); j += blockDim.x) {
     if (hist.size(j) > 60)
       atomicAdd(&n60, 1);
     if (hist.size(j) > 40)
@@ -214,7 +214,7 @@ void findClus(
     if (!(id[i] == thisModuleId)) {
       stream_ct1 << "error file gpuClustering";
     } // same module
-    int be = Hist::bin(y[i] + 1);
+    int be = HistoContainer::bin(y[i] + 1);
     auto e = hist->end(be);
     ++p;
     if (!(0 == nnn[k])) {

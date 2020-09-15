@@ -70,9 +70,9 @@ namespace cms {
       /*
       DPCT1003:12: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
       Sostituito il cudacheck*/
-      stream->memset(off, 0, 4 * Histo::totbins());
+      stream->memset(off, 0, 4 * HistoContainer::totbins());
 #else
-      ::memset(off, 0, 4 * Histo::totbins());
+      ::memset(off, 0, 4 * HistoContainer::totbins());
 #endif
     }
 
