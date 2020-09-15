@@ -5,7 +5,7 @@
 
 #include <cuda_runtime.h>
 
-#include "CUDACore/cudaCheck.h"
+#include "cudaCheck.h"
 
 namespace cms {
   namespace cuda {

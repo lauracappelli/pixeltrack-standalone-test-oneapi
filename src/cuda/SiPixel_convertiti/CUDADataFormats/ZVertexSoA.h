@@ -2,7 +2,7 @@
 #define CUDADataFormatsVertexZVertexSoA_H
 
 #include <cstdint>
-#include "CUDACore/cudaCompat.h"
+#include "../CUDACore/cudaCompat.h"
 
 // SOA for vertices
 // These vertices are clusterized and fitted only along the beam line (z)

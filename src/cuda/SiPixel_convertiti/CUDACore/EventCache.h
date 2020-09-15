@@ -5,8 +5,8 @@
 
 #include <cuda_runtime.h>
 
-#include "Framework/ReusableObjectHolder.h"
-#include "CUDACore/SharedEventPtr.h"
+//#include "Framework/ReusableObjectHolder.h"
+#include "SharedEventPtr.h"
 
 class CUDAService;
 

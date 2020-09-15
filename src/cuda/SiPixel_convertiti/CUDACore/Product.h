@@ -3,7 +3,7 @@
 
 #include <memory>
 
-#include "CUDACore/ProductBase.h"
+#include "ProductBase.h"
 
 namespace edm {
   template <typename T>

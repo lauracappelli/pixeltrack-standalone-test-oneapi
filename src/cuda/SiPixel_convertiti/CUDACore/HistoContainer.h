@@ -13,11 +13,11 @@
 #include <cub/cub.cuh>
 #endif
 
-#include "CUDACore/AtomicPairCounter.h"
-#include "CUDACore/cudaCheck.h"
-#include "CUDACore/cuda_assert.h"
-#include "CUDACore/cudastdAlgorithm.h"
-#include "CUDACore/prefixScan.h"
+#include "AtomicPairCounter.h"
+#include "cudaCheck.h"
+#include "cuda_assert.h"
+#include "cudastdAlgorithm.h"
+#include "prefixScan.h"
 
 namespace cms {
   namespace cuda {

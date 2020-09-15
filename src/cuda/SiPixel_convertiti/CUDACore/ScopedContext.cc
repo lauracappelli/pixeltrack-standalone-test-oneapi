@@ -1,7 +1,7 @@
-#include "CUDACore/ScopedContext.h"
+#include "ScopedContext.h"
 
-#include "CUDACore/StreamCache.h"
-#include "CUDACore/cudaCheck.h"
+#include "StreamCache.h"
+#include "cudaCheck.h"
 
 #include "chooseDevice.h"
 

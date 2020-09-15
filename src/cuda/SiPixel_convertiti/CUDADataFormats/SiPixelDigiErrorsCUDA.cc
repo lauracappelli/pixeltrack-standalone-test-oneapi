@@ -1,9 +1,9 @@
-#include "CUDADataFormats/SiPixelDigiErrorsCUDA.h"
+#include "SiPixelDigiErrorsCUDA.h"
 
-#include "CUDACore/device_unique_ptr.h"
-#include "CUDACore/host_unique_ptr.h"
-#include "CUDACore/copyAsync.h"
-#include "CUDACore/memsetAsync.h"
+#include "../CUDACore/device_unique_ptr.h"
+#include "../CUDACore/host_unique_ptr.h"
+#include "../CUDACore/copyAsync.h"
+#include "../CUDACore/memsetAsync.h"
 
 #include <cassert>
 

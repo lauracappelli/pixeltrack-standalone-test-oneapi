@@ -1,9 +1,9 @@
-#include "CUDACore/EventCache.h"
-#include "CUDACore/cudaCheck.h"
-#include "CUDACore/currentDevice.h"
-#include "CUDACore/deviceCount.h"
-#include "CUDACore/eventWorkHasCompleted.h"
-#include "CUDACore/ScopedSetDevice.h"
+#include "EventCache.h"
+#include "cudaCheck.h"
+#include "currentDevice.h"
+#include "deviceCount.h"
+#include "eventWorkHasCompleted.h"
+#include "ScopedSetDevice.h"
 
 namespace cms::cuda {
   void EventCache::Deleter::operator()(cudaEvent_t event) const {

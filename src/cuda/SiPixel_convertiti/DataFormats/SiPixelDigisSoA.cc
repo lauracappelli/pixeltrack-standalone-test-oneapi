@@ -1,4 +1,4 @@
-#include "DataFormats/SiPixelDigisSoA.h"
+#include "SiPixelDigisSoA.h"
 
 #include <cassert>
 

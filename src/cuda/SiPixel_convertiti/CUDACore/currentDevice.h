@@ -1,7 +1,7 @@
 #ifndef HeterogenousCore_CUDAUtilities_currentDevice_h
 #define HeterogenousCore_CUDAUtilities_currentDevice_h
 
-#include "CUDACore/cudaCheck.h"
+#include "cudaCheck.h"
 
 #include <cuda_runtime.h>
 

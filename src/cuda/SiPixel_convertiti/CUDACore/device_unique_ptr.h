@@ -4,8 +4,8 @@
 #include <memory>
 #include <functional>
 
-#include "CUDACore/allocate_device.h"
-#include "CUDACore/currentDevice.h"
+#include "allocate_device.h"
+#include "currentDevice.h"
 
 namespace cms {
   namespace cuda {

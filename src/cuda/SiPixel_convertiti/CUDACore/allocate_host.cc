@@ -1,7 +1,7 @@
 #include <limits>
 
-#include "CUDACore/allocate_host.h"
-#include "CUDACore/cudaCheck.h"
+#include "allocate_host.h"
+#include "cudaCheck.h"
 
 #include "getCachingHostAllocator.h"
 

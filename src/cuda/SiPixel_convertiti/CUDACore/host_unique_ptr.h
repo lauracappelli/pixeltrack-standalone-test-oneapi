@@ -4,7 +4,7 @@
 #include <memory>
 #include <functional>
 
-#include "CUDACore/allocate_host.h"
+#include "allocate_host.h"
 
 namespace cms {
   namespace cuda {

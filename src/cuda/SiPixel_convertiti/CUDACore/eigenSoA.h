@@ -7,7 +7,7 @@
 
 #include <Eigen/Core>
 
-#include "CUDACore/cudaCompat.h"
+#include "cudaCompat.h"
 
 namespace eigenSoA {
 

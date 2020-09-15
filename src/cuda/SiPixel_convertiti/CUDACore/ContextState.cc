@@ -1,4 +1,4 @@
-#include "CUDACore/ContextState.h"
+#include "ContextState.h"
 
 #include <stdexcept>
 

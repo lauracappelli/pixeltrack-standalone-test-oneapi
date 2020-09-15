@@ -4,8 +4,8 @@
 #include <atomic>
 #include <memory>
 
-#include "CUDACore/SharedStreamPtr.h"
-#include "CUDACore/SharedEventPtr.h"
+#include "SharedStreamPtr.h"
+#include "SharedEventPtr.h"
 
 namespace cms {
   namespace cuda {

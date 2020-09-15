@@ -1,7 +1,7 @@
 #ifndef CUDADataFormats_BeamSpot_interface_BeamSpotCUDA_h
 #define CUDADataFormats_BeamSpot_interface_BeamSpotCUDA_h
 
-#include "CUDACore/device_unique_ptr.h"
+#include "../CUDACore/device_unique_ptr.h"
 
 #include <cuda_runtime.h>
 

@@ -1,7 +1,7 @@
 #ifndef HeterogeneousCore_CUDAUtilities_eventWorkHasCompleted_h
 #define HeterogeneousCore_CUDAUtilities_eventWorkHasCompleted_h
 
-#include "CUDACore/cudaCheck.h"
+#include "cudaCheck.h"
 
 #include <cuda_runtime.h>
 

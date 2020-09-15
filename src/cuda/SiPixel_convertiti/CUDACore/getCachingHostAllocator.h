@@ -1,7 +1,7 @@
 #ifndef HeterogeneousCore_CUDACore_src_getCachingHostAllocator
 #define HeterogeneousCore_CUDACore_src_getCachingHostAllocator
 
-#include "CUDACore/cudaCheck.h"
+#include "cudaCheck.h"
 #include "CachingHostAllocator.h"
 
 #include "getCachingDeviceAllocator.h"

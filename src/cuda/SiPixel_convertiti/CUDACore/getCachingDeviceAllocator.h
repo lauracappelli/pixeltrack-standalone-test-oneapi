@@ -1,8 +1,8 @@
 #ifndef HeterogeneousCore_CUDACore_src_getCachingDeviceAllocator
 #define HeterogeneousCore_CUDACore_src_getCachingDeviceAllocator
 
-#include "CUDACore/cudaCheck.h"
-#include "CUDACore/deviceCount.h"
+#include "cudaCheck.h"
+#include "deviceCount.h"
 #include "CachingDeviceAllocator.h"
 
 namespace cms::cuda::allocator {

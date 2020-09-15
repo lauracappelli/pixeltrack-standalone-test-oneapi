@@ -3,15 +3,15 @@
 
 #include <optional>
 
-#include "CUDACore/Product.h"
-#include "Framework/WaitingTaskWithArenaHolder.h"
-#include "Framework/Event.h"
-#include "Framework/EDGetToken.h"
-#include "Framework/EDPutToken.h"
-#include "CUDACore/ContextState.h"
-#include "CUDACore/EventCache.h"
-#include "CUDACore/SharedEventPtr.h"
-#include "CUDACore/SharedStreamPtr.h"
+#include "Product.h"
+#include "../Framework/WaitingTaskWithArenaHolder.h"
+#include "../Framework/Event.h"
+#include "../Framework/EDGetToken.h"
+#include "../Framework/EDPutToken.h"
+#include "ContextState.h"
+#include "EventCache.h"
+#include "SharedEventPtr.h"
+#include "SharedStreamPtr.h"
 
 namespace cms {
   namespace cudatest {

@@ -5,8 +5,8 @@
 
 #include <cuda_runtime.h>
 
-#include "Framework/ReusableObjectHolder.h"
-#include "CUDACore/SharedStreamPtr.h"
+#include "../Framework/ReusableObjectHolder.h"
+#include "SharedStreamPtr.h"
 
 class CUDAService;
 

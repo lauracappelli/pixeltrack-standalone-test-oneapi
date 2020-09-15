@@ -5,7 +5,7 @@
 
 #include <cuda_runtime.h>
 
-#include "CUDACore/cudaCheck.h"
+#include "cudaCheck.h"
 
 /*
  * `cms::cuda::launch` and `cms::cuda::launch_cooperative` are wrappers around

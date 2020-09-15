@@ -1,9 +1,9 @@
 #ifndef CUDADataFormats_SiPixelDigi_interface_SiPixelDigisCUDA_h
 #define CUDADataFormats_SiPixelDigi_interface_SiPixelDigisCUDA_h
 
-#include "CUDACore/device_unique_ptr.h"
-#include "CUDACore/host_unique_ptr.h"
-#include "CUDACore/cudaCompat.h"
+#include "../CUDACore/device_unique_ptr.h"
+#include "../CUDACore/host_unique_ptr.h"
+#include "../CUDACore/cudaCompat.h"
 
 #include <cuda_runtime.h>
 

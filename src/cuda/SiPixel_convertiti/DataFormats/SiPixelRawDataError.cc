@@ -1,4 +1,4 @@
-#include "DataFormats/SiPixelRawDataError.h"
+#include "SiPixelRawDataError.h"
 
 //---------------------------------------------------------------------------
 //!  \class SiPixelRawDataError

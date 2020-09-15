@@ -3,8 +3,8 @@
  *  \author N. Amapane - CERN, R. Mommsen - FNAL
  */
 
-#include "DataFormats/FEDTrailer.h"
-#include "DataFormats/fed_trailer.h"
+#include "FEDTrailer.h"
+#include "fed_trailer.h"
 
 FEDTrailer::FEDTrailer(const unsigned char* trailer) : theTrailer(reinterpret_cast<const fedt_t*>(trailer)) {}
 

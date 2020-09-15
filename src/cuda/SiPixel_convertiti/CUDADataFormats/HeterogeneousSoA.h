@@ -3,10 +3,10 @@
 
 #include <cassert>
 
-#include "CUDACore/copyAsync.h"
-#include "CUDACore/cudaCheck.h"
-#include "CUDACore/device_unique_ptr.h"
-#include "CUDACore/host_unique_ptr.h"
+#include "../CUDACore/copyAsync.h"
+#include "../CUDACore/cudaCheck.h"
+#include "../CUDACore/device_unique_ptr.h"
+#include "../CUDACore/host_unique_ptr.h"
 
 // a heterogeneous unique pointer...
 template <typename T>

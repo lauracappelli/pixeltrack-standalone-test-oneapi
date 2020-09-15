@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-#include "CUDACore/cudaCompat.h"
+#include "cudaCompat.h"
 
 class AtomicPairCounter {
 public:

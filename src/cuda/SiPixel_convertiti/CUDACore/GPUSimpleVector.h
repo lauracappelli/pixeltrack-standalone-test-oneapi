@@ -6,7 +6,7 @@
 #include <type_traits>
 #include <utility>
 
-#include "CUDACore/cudaCompat.h"
+#include "cudaCompat.h"
 
 namespace GPU {
   template <class T>

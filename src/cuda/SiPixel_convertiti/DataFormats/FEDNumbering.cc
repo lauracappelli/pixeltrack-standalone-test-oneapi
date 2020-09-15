@@ -2,7 +2,7 @@
  *
  *  \author G. Bruno  - CERN, EP Division
  */
-#include "DataFormats/FEDNumbering.h"
+#include "FEDNumbering.h"
 #include <cassert>
 
 using namespace std;

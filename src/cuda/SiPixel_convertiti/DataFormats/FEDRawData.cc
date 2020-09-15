@@ -5,7 +5,7 @@
    \date 28 Jun 2005
 */
 
-#include "DataFormats/FEDRawData.h"
+#include "FEDRawData.h"
 #include <iostream>
 
 using namespace std;

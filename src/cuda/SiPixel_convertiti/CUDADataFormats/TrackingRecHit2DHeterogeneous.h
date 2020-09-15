@@ -1,8 +1,8 @@
 #ifndef CUDADataFormats_TrackingRecHit_interface_TrackingRecHit2DHeterogeneous_h
 #define CUDADataFormats_TrackingRecHit_interface_TrackingRecHit2DHeterogeneous_h
 
-#include "CUDADataFormats/TrackingRecHit2DSOAView.h"
-#include "CUDADataFormats/HeterogeneousSoA.h"
+#include "TrackingRecHit2DSOAView.h"
+#include "HeterogeneousSoA.h"
 
 template <typename Traits>
 class TrackingRecHit2DHeterogeneous {

@@ -1,4 +1,4 @@
-#include "CUDACore/cudaCompat.h"
+#include "cudaCompat.h"
 
 namespace cudaCompat {
   thread_local dim3 blockIdx;

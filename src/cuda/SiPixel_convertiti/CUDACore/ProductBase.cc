@@ -1,5 +1,5 @@
-#include "CUDACore/ProductBase.h"
-#include "CUDACore/eventWorkHasCompleted.h"
+#include "ProductBase.h"
+#include "eventWorkHasCompleted.h"
 
 namespace cms::cuda {
   bool ProductBase::isAvailable() const {

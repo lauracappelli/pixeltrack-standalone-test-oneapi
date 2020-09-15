@@ -9,7 +9,7 @@
  *  \author N. Amapane - S. Argiro'
  */
 
-#include "DataFormats/FEDRawData.h"
+#include "FEDRawData.h"
 
 #include <vector>
 

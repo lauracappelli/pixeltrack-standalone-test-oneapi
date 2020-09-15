@@ -5,7 +5,7 @@
 // Author: Felice Pantaleo, CERN
 //
 
-#include "CUDACore/cudaCompat.h"
+#include "cudaCompat.h"
 
 namespace GPU {
 

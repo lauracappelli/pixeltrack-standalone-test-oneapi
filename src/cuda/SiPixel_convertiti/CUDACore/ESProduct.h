@@ -6,11 +6,11 @@
 #include <mutex>
 #include <vector>
 
-#include "CUDACore/EventCache.h"
-#include "CUDACore/cudaCheck.h"
-#include "CUDACore/deviceCount.h"
-#include "CUDACore/currentDevice.h"
-#include "CUDACore/eventWorkHasCompleted.h"
+#include "EventCache.h"
+#include "cudaCheck.h"
+#include "deviceCount.h"
+#include "currentDevice.h"
+#include "eventWorkHasCompleted.h"
 
 namespace cms {
   namespace cuda {

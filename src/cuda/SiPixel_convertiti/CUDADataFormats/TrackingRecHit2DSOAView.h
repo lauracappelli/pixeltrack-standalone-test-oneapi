@@ -3,10 +3,10 @@
 
 #include <cuda_runtime.h>
 
-#include "CUDADataFormats/gpuClusteringConstants.h"
-#include "CUDACore/HistoContainer.h"
-#include "CUDACore/cudaCompat.h"
-#include "Geometry/phase1PixelTopology.h"
+#include "gpuClusteringConstants.h"
+#include "../CUDACore/HistoContainer.h"
+#include "../CUDACore/cudaCompat.h"
+#include "../Geometry/phase1PixelTopology.h"
 
 namespace pixelCPEforGPU {
   struct ParamsOnGPU;

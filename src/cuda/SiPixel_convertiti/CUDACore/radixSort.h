@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-#include "CUDACore/cuda_assert.h"
+#include "cuda_assert.h"
 
 template <typename T>
 __device__ inline void dummyReorder(T const* a, uint16_t* ind, uint16_t* ind2, uint32_t size) {}

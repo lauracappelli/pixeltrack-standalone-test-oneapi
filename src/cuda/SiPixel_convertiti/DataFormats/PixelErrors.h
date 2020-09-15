@@ -5,7 +5,7 @@
 #include <vector>
 #include <cstdint>
 
-#include "DataFormats/SiPixelRawDataError.h"
+#include "SiPixelRawDataError.h"
 
 // Better ideas for the placement of these?
 

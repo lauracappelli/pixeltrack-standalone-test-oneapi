@@ -4,8 +4,8 @@
  *  \author N. Amapane - S. Argiro'
  */
 
-#include "DataFormats/FEDRawDataCollection.h"
-#include "DataFormats/FEDNumbering.h"
+#include "FEDRawDataCollection.h"
+#include "FEDNumbering.h"
 
 FEDRawDataCollection::FEDRawDataCollection() : data_(FEDNumbering::lastFEDId() + 1) {}
 

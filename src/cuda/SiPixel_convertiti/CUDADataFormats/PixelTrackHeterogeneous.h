@@ -1,10 +1,10 @@
 #ifndef CUDADataFormatsTrackTrackHeterogeneous_H
 #define CUDADataFormatsTrackTrackHeterogeneous_H
 
-#include "CUDADataFormats/TrajectoryStateSoA.h"
-#include "CUDACore/HistoContainer.h"
+#include "TrajectoryStateSoA.h"
+#include "../CUDACore/HistoContainer.h"
 
-#include "CUDADataFormats/HeterogeneousSoA.h"
+#include "HeterogeneousSoA.h"
 
 namespace trackQuality {
   enum Quality : uint8_t { bad = 0, dup, loose, strict, tight, highPurity };

@@ -1,10 +1,10 @@
 #ifndef CUDADataFormats_SiPixelDigi_interface_SiPixelDigiErrorsCUDA_h
 #define CUDADataFormats_SiPixelDigi_interface_SiPixelDigiErrorsCUDA_h
 
-#include "DataFormats/PixelErrors.h"
-#include "CUDACore/device_unique_ptr.h"
-#include "CUDACore/host_unique_ptr.h"
-#include "CUDACore/GPUSimpleVector.h"
+#include "../DataFormats/PixelErrors.h"
+#include "../CUDACore/device_unique_ptr.h"
+#include "../CUDACore/host_unique_ptr.h"
+#include "../CUDACore/GPUSimpleVector.h"
 
 #include <cuda_runtime.h>
 

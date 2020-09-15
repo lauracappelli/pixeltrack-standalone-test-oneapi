@@ -1,7 +1,7 @@
 #ifndef HeterogeneousCore_CUDACore_ContextState_h
 #define HeterogeneousCore_CUDACore_ContextState_h
 
-#include "CUDACore/SharedStreamPtr.h"
+#include "SharedStreamPtr.h"
 
 #include <memory>
 

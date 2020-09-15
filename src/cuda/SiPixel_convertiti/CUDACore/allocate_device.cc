@@ -1,8 +1,8 @@
 #include <limits>
 
-#include "CUDACore/ScopedSetDevice.h"
-#include "CUDACore/allocate_device.h"
-#include "CUDACore/cudaCheck.h"
+#include "ScopedSetDevice.h"
+#include "allocate_device.h"
+#include "cudaCheck.h"
 
 #include "getCachingDeviceAllocator.h"
 

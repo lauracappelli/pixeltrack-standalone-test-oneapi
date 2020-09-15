@@ -1,8 +1,8 @@
 #ifndef HeterogeneousCore_CUDAUtilities_memsetAsync_h
 #define HeterogeneousCore_CUDAUtilities_memsetAsync_h
 
-#include "CUDACore/cudaCheck.h"
-#include "CUDACore/device_unique_ptr.h"
+#include "cudaCheck.h"
+#include "device_unique_ptr.h"
 
 #include <type_traits>
 

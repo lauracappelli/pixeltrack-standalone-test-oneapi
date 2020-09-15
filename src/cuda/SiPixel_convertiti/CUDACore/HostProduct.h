@@ -1,7 +1,7 @@
 #ifndef CUDADataFormatsCommonHostProduct_H
 #define CUDADataFormatsCommonHostProduct_H
 
-#include "CUDACore/host_unique_ptr.h"
+#include "host_unique_ptr.h"
 
 // a heterogeneous unique pointer...
 template <typename T>

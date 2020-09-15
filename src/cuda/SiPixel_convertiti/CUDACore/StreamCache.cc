@@ -1,8 +1,8 @@
-#include "CUDACore/StreamCache.h"
-#include "CUDACore/cudaCheck.h"
-#include "CUDACore/currentDevice.h"
-#include "CUDACore/deviceCount.h"
-#include "CUDACore/ScopedSetDevice.h"
+#include "StreamCache.h"
+#include "cudaCheck.h"
+#include "currentDevice.h"
+#include "deviceCount.h"
+#include "ScopedSetDevice.h"
 
 namespace cms::cuda {
   void StreamCache::Deleter::operator()(cudaStream_t stream) const {

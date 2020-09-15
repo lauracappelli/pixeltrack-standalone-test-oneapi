@@ -3,8 +3,8 @@
  *  \author N. Amapane - CERN, R. Mommsen - FNAL
  */
 
-#include "DataFormats/FEDHeader.h"
-#include "DataFormats/fed_header.h"
+#include "FEDHeader.h"
+#include "fed_header.h"
 
 FEDHeader::FEDHeader(const unsigned char* header) : theHeader(reinterpret_cast<const fedh_t*>(header)) {}
 

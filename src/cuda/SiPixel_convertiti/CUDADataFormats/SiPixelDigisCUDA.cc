@@ -1,8 +1,8 @@
-#include "CUDADataFormats/SiPixelDigisCUDA.h"
+#include "SiPixelDigisCUDA.h"
 
-#include "CUDACore/device_unique_ptr.h"
-#include "CUDACore/host_unique_ptr.h"
-#include "CUDACore/copyAsync.h"
+#include "../CUDACore/device_unique_ptr.h"
+#include "../CUDACore/host_unique_ptr.h"
+#include "../CUDACore/copyAsync.h"
 
 SiPixelDigisCUDA::SiPixelDigisCUDA(size_t maxFedWords, cudaStream_t stream) {
   xx_d = cms::cuda::make_device_unique<uint16_t[]>(maxFedWords, stream);

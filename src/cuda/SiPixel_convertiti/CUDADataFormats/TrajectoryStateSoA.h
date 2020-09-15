@@ -1,8 +1,8 @@
 #ifndef CUDADataFormatsTrackTrajectoryStateSOA_H
 #define CUDADataFormatsTrackTrajectoryStateSOA_H
 
-#include <Eigen/Dense>
-#include "CUDACore/eigenSoA.h"
+//#include <Eigen/Dense>
+#include "../CUDACore/eigenSoA.h"
 
 template <int32_t S>
 struct TrajectoryStateSoA {
