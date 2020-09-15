@@ -1,9 +1,9 @@
 #ifndef HeterogeneousCore_CUDAUtilities_copyAsync_h
 #define HeterogeneousCore_CUDAUtilities_copyAsync_h
 
-#include "CUDACore/cudaCheck.h"
-#include "CUDACore/device_unique_ptr.h"
-#include "CUDACore/host_unique_ptr.h"
+#include "cudaCheck.h"
+#include "device_unique_ptr.h"
+#include "host_unique_ptr.h"
 
 #include <type_traits>
 
