@@ -95,7 +95,7 @@ void findClus(
   constexpr auto nbins = phase1PixelTopology::numColsInModule + 2; // 2+2;
   using Hist = HistoContainer<uint16_t, nbins, maxPixInModule, 9, uint16_t>;
 
-  for (auto j = item_ct1.get_local_id(2); j < HistoContainer<uint16_t, nbins, maxPixInModule, 9, uint16_t><uint16_t, nbins, maxPixInModule, 9, uint16_t>::totbins();
+  for (auto j = item_ct1.get_local_id(2); j < HistoContainer<uint16_t, nbins, maxPixInModule, 9, uint16_t>::totbins();
        j += item_ct1.get_local_range().get(2)) {
     hist->off[j] = 0;
   }

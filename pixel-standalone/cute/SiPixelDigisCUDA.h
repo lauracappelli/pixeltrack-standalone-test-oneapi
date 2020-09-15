@@ -10,7 +10,7 @@
 class SiPixelDigisCUDA {
 public:
   SiPixelDigisCUDA() = default;
-  explicit SiPixelDigisCUDA(size_t maxFedWords, sycl::queue *stream);
+  explicit SiPixelDigisCUDA(unsigned long maxFedWords, cl::sycl::queue *stream1);
   ~SiPixelDigisCUDA() = default;
 
   SiPixelDigisCUDA(const SiPixelDigisCUDA &) = delete;
