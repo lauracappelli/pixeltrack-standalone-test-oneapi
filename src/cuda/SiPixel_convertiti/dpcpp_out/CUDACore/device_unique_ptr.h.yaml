@@ -1,0 +1,42 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/dpcpp_out/CUDACore/device_unique_ptr.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/device_unique_ptr.h'
+    Offset:          141
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/device_unique_ptr.h'
+    Offset:          1514
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/device_unique_ptr.h'
+    Offset:          1527
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/device_unique_ptr.h'
+    Offset:          2244
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/device_unique_ptr.h'
+    Offset:          2257
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/device_unique_ptr.h'
+    Offset:          3163
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/device_unique_ptr.h'
+    Offset:          3176
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/device_unique_ptr.h'
+    Offset:          3657
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/device_unique_ptr.h'
+    Offset:          3670
+    Length:          0
+    ReplacementText: '*'
+...

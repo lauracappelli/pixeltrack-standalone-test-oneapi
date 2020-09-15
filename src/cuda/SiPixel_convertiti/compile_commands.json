@@ -1,0 +1,7 @@
+[
+    {
+        "command": "cc -c -D__NVCC__ -I/usr/local/cuda/bin/../targets/x86_64-linux/include -D__CUDACC_VER_MAJOR__=11 -D__CUDACC_VER_MINOR__=0 -D__CUDACC_VER_BUILD__=221 -m64 -o /tmp/vcavalli/tmpxft_00338895_00000000-5_SiPixelClustersCUDA.o SiPixelClustersCUDA.cc",
+        "directory": "/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti",
+        "file": "/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/SiPixelClustersCUDA.cc"
+    }
+]

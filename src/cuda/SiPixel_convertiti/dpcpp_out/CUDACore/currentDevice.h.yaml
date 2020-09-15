@@ -1,0 +1,18 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/dpcpp_out/CUDACore/currentDevice.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/currentDevice.h'
+    Offset:          111
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/currentDevice.h'
+    Offset:          135
+    Length:          26
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/currentDevice.h'
+    Offset:          261
+    Length:          19
+    ReplacementText: 'dev = dpct::dev_mgr::instance().current_device_id()'
+...

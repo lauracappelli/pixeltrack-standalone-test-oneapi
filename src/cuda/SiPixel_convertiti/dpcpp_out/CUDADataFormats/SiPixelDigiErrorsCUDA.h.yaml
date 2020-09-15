@@ -1,0 +1,38 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/dpcpp_out/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          141
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          307
+    Length:          26
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          491
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          504
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          1323
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          1336
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          1380
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelDigiErrorsCUDA.h'
+    Offset:          1393
+    Length:          0
+    ReplacementText: '*'
+...

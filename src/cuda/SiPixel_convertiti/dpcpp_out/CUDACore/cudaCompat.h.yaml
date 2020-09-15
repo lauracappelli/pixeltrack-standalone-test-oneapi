@@ -1,0 +1,66 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/dpcpp_out/CUDACore/cudaCompat.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          212
+    Length:          10
+    ReplacementText: CL_SYCL_LANGUAGE_VERSION
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          224
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          284
+    Length:          26
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          343
+    Length:          18
+    ReplacementText: __DPCT_HPP__
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          420
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          438
+    Length:          7
+    ReplacementText: 0, 0, 0
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          456
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          473
+    Length:          7
+    ReplacementText: 1, 1, 1
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          506
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          543
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          1514
+    Length:          9
+    ReplacementText: 'sycl::range<3>(0, 0, 0)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          1539
+    Length:          9
+    ReplacementText: 'sycl::range<3>(1, 1, 1)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          1638
+    Length:          18
+    ReplacementText: __DPCT_HPP__
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          1834
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/cudaCompat.h'
+    Offset:          2024
+    Length:          13
+    ReplacementText: DPCPP_COMPATIBILITY_TEMP
+...

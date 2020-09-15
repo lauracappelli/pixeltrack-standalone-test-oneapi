@@ -1,0 +1,98 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/dpcpp_out/CUDADataFormats/SiPixelClustersCUDA.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          143
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          264
+    Length:          26
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          413
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          426
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          1743
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1026:4: The call to __ldg was removed, because there is no correspoinding API in DPC++.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          1747
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          1758
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          1817
+    Length:          23
+    ReplacementText: '*(moduleStart_ + i)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          1844
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1026:5: The call to __ldg was removed, because there is no correspoinding API in DPC++.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          1848
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          1859
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          1919
+    Length:          24
+    ReplacementText: '*(clusInModule_ + i)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          1947
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1026:6: The call to __ldg was removed, because there is no correspoinding API in DPC++.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          1951
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          1962
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          2018
+    Length:          20
+    ReplacementText: '*(moduleId_ + i)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          2042
+    Length:          0
+    ReplacementText: '    /*
+    DPCT1026:7: The call to __ldg was removed, because there is no correspoinding API in DPC++.
+    */
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          2046
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          2057
+    Length:          15
+    ReplacementText: __dpct_inline__
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDADataFormats/SiPixelClustersCUDA.h'
+    Offset:          2120
+    Length:          27
+    ReplacementText: '*(clusModuleStart_ + i)'
+...

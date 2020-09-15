@@ -1,0 +1,66 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/dpcpp_out/CUDACore/GPUSimpleVector.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          178
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          1154
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          1218
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          1455
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          1526
+    Length:          21
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_add(1)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          1680
+    Length:          21
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_sub(1)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          1768
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          1839
+    Length:          21
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_add(1)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          2021
+    Length:          21
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_sub(1)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          2119
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          2183
+    Length:          24
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_add(size)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          2300
+    Length:          24
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_sub(size)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          2364
+    Length:          11
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          2428
+    Length:          24
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_sub(size)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/GPUSimpleVector.h'
+    Offset:          2547
+    Length:          24
+    ReplacementText: 'sycl::atomic<int>(sycl::global_ptr<int>(&m_size)).fetch_add(size)'
+...

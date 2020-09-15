@@ -1,0 +1,134 @@
+---
+MainSourceFile:  '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/dpcpp_out/CUDACore/copyAsync.h'
+Replacements:
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          105
+    Length:          0
+    ReplacementText: '#include <CL/sycl.hpp>
+#include <dpct/dpct.hpp>
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          382
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          395
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          673
+    Length:          0
+    ReplacementText: '      /*
+      DPCT1003:8: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
+      */
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          689
+    Length:          15
+    ReplacementText: '(stream->memcpy'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          736
+    Length:          24
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          760
+    Length:          8
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          769
+    Length:          0
+    ReplacementText: ', 0)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          891
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          904
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1056
+    Length:          0
+    ReplacementText: '      /*
+      DPCT1003:9: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
+      */
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1072
+    Length:          15
+    ReplacementText: '(stream->memcpy'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1119
+    Length:          24
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1143
+    Length:          8
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1152
+    Length:          0
+    ReplacementText: ', 0)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1399
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1412
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1422
+    Length:          0
+    ReplacementText: '      /*
+      DPCT1003:10: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
+      */
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1438
+    Length:          15
+    ReplacementText: '(stream->memcpy'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1497
+    Length:          24
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1521
+    Length:          8
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1530
+    Length:          0
+    ReplacementText: ', 0)'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1752
+    Length:          12
+    ReplacementText: 'sycl::queue'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1765
+    Length:          0
+    ReplacementText: '*'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1775
+    Length:          0
+    ReplacementText: '      /*
+      DPCT1003:11: Migrated API does not return error code. (*, 0) is inserted. You may need to rewrite this code.
+      */
+'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1791
+    Length:          15
+    ReplacementText: '(stream->memcpy'
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1850
+    Length:          24
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1874
+    Length:          8
+    ReplacementText: ''
+  - FilePath:        '/afs/cern.ch/user/v/vcavalli/private/github/pixeltrack-standalone-test-oneapi/src/cuda/SiPixel_convertiti/CUDACore/copyAsync.h'
+    Offset:          1883
+    Length:          0
+    ReplacementText: ', 0)'
+...
