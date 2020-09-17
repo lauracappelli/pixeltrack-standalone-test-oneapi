@@ -96,8 +96,9 @@ namespace oneapi {
       queue.memcpy(input_d, input_h, sizeof(Input));
       queue.memcpy(output_d, output_h, sizeof(Output));
 
-      //AVVIO row-to-digi
+      //AVVIO row-to-digi e digi-to-cluster
       rawtodigi(input_d, output_d, input.wordCounter, true, true, i == 0, queue);
+      digitocluster(input_d, output_d, input.wordCounter, true, true, i == 0, queue);
 
       //copio il risultato dal device all'host e attendo la fine dell'esecuzione del kernel
       queue.memcpy(output_h, output_d, sizeof(Output));
