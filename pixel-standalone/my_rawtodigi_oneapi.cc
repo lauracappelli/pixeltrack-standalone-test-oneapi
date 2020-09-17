@@ -9,6 +9,7 @@
 #include "modules.h"
 #include "output.h"
 #include "rawtodigi_oneapi.h"
+#include "cute/SiPixelClustersCUDA.h"
 
 // For host compilation use the standard implementation.
 #ifdef __SYCL_DEVICE_ONLY__
@@ -564,10 +565,17 @@ namespace oneapi {
 
 
     //eseguo il kernel calibDigis
+    auto clusters_d = SiPixelClustersCUDA(gpuClustering::MaxNumModules, stream);
+    auto clusters_d_moduleStart = clusters_d.moduleStart();
+    auto clusters_d_clusInModule = clusters_d.clusInModule();
+    auto clusters_d_clusModuleStart = clusters_d.clusModuleStart();
     queue.submit([&](cl::sycl::handler& cgh) {
       cgh.parallel_for<calibDigis_kernel_>(
           cl::sycl::nd_range<1>{{threads}, {blockSize}}, [=](cl::sycl::nd_item<1> item) {
-            calibDigis_kernel(item, input_d, output_d);
+            calibDigis_kernel(item, input_d, output_d,
+                              clusters_d_moduleStart,
+                              clusters_d_clusInModule,
+                              clusters_d_clusModuleStart);
           });
     });
     queue.get_device().queues_wait_and_throw();
@@ -576,7 +584,7 @@ namespace oneapi {
         cgh.single_task<count_modules_kernel_>([=]() { count_modules_kernel(input_d, output_d); });
       });
     }
-
+/*
     //eseguo il kernel countModules
     queue.submit([&](cl::sycl::handler& cgh) {
       cgh.parallel_for<countModules_kernel_>(
@@ -631,19 +639,13 @@ namespace oneapi {
         cgh.single_task<count_modules_kernel_>([=]() { count_modules_kernel(input_d, output_d); });
       });
     }
-
+*/
   } catch (cl::sycl::exception const& exc) {
     std::cerr << exc.what() << "EOE at line " << __LINE__ << std::endl;
     std::exit(1);
   }
-
-  void calibDigis_kernel(cl::sycl::nd_item<1> item,
-                         const Input* input,
-                         Output* output,
-                         bool useQualityInfo,
-                         bool includeErrors,
-                         bool debug) {}
-
+  
+/*
   void countModules_kernel(cl::sycl::nd_item<1> item,
                            const Input* input,
                            Output* output,
@@ -671,5 +673,5 @@ namespace oneapi {
                                   bool useQualityInfo,
                                   bool includeErrors,
                                   bool debug) {}
-
+*/
 }  // end namespace oneapi

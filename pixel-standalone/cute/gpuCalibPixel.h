@@ -19,18 +19,19 @@ namespace gpuCalibPixel {
   constexpr float VCaltoElectronOffset = -60;      // L2-4: -60 +- 130
   constexpr float VCaltoElectronOffset_L1 = -670;  // L1:   -670 +- 220
 
-  void calibDigis(uint16_t* id,
-                             uint16_t const* __restrict__ x,
-                             uint16_t const* __restrict__ y,
-                             uint16_t* adc,
-                             SiPixelGainForHLTonGPU const* __restrict__ ped,
-                             int numElements,
-                             uint32_t* __restrict__ moduleStart,        // just to zero first
-                             uint32_t* __restrict__ nClustersInModule,  // just to zero them
-                             uint32_t* __restrict__ clusModuleStart     // just to zero first
-  ,
-                             sycl::nd_item<3> item_ct1,
-                             sycl::stream stream_ct1) {
+  void calibDigis(cl::sycl::nd_item<1> item,
+                  const Input* input,
+                  const Output* output,
+                  uint32_t* __restrict__ moduleStart,        // just to zero first
+                  uint32_t* __restrict__ nClustersInModule,  // just to zero them
+                  uint32_t* __restrict__ clusModuleStart     // just to zero first
+                  ) {
+    
+    const uint32_t wordCounter = input->wordCounter;
+    uint16_t* id = output->moduleInd;
+    uint16_t* x = output->xx;
+    uint16_t* y = output->yy;
+    uint16_t* adc = output->adc;
     int first = item_ct1.get_local_range().get(2) * item_ct1.get_group(2) + item_ct1.get_local_id(2);
 
     // zero for next kernels...
@@ -52,17 +53,15 @@ namespace gpuCalibPixel {
 
       int row = x[i];
       int col = y[i];
-      auto ret = ped->getPedAndGain(id[i], col, row, isDeadColumn, isNoisyColumn);
-      float pedestal = ret.first;
-      float gain = ret.second;
-      // float pedestal = 0; float gain = 1.;
+      //auto ret = ped->getPedAndGain(id[i], col, row, isDeadColumn, isNoisyColumn);
+      //float pedestal = ret.first;
+      //float gain = ret.second;
+
+      float pedestal = 0; float gain = 1.;
       if (isDeadColumn | isNoisyColumn) {
         id[i] = InvId;
         adc[i] = 0;
-        /*
-        DPCT1015:4: Output needs adjustment.
-        */
-        stream_ct1 << "bad pixel at %d in %d\n";
+        stream_ct1 << "bad pixel\n" << endl;
       } else {
         float vcal = adc[i] * gain - pedestal * gain;
         adc[i] = sycl::max(100, int(vcal * conversionFactor + offset));
