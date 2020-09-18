@@ -9,18 +9,6 @@
 #include "modules.h"
 #include "output.h"
 #include "rawtodigi_oneapi.h"
-#include "cute/gpuClusteringConstants.h"
-#include "cute/prefixScan.h"
-#include "cute/device_unique_ptr.h"
-#include "cute/SiPixelRawToClusterGPUKernel.h"
-#include "cute/SiPixelGainForHLTonGPU.h"
-#include "cute/SiPixelDigisCUDA.h"
-#include "cute/SiPixelDigiErrorsCUDA.h"
-#include "cute/SiPixelClustersCUDA.h"
-#include "cute/host_unique_ptr.h"
-#include "cute/TrackingRecHit2DSOAView.h"
-#include "cute/gpuCalibPixel.h"
-#include "SiPixelRawToClusterGPUKernel.dp.cpp"
 
 // For host compilation use the standard implementation.
 #ifdef __SYCL_DEVICE_ONLY__
@@ -575,7 +563,7 @@ namespace oneapi {
       std::cout << "work groups: " << blocks << ", work items per group: " << blockSize << std::endl;
     }
 
-
+    /*
     //eseguo il kernel calibDigis
     auto clusters_d = SiPixelClustersCUDA(gpuClustering::MaxNumModules, stream);
     auto clusters_d_moduleStart = clusters_d.moduleStart();
@@ -596,6 +584,7 @@ namespace oneapi {
         cgh.single_task<count_modules_kernel_>([=]() { count_modules_kernel(input_d, output_d); });
       });
     }
+    */
 /*
     //eseguo il kernel countModules
     queue.submit([&](cl::sycl::handler& cgh) {

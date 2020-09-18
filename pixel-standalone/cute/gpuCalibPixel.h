@@ -19,9 +19,9 @@ namespace gpuCalibPixel {
   constexpr float VCaltoElectronOffset = -60;      // L2-4: -60 +- 130
   constexpr float VCaltoElectronOffset_L1 = -670;  // L1:   -670 +- 220
 
-  void calibDigis(cl::sycl::nd_item<1> item,
-                  const Input* input,
-                  const Output* output,
+  void calibDigis(cl::sycl::nd_item<1> item_ct1,
+                  Input* input,
+                  Output* output,
                   uint32_t* __restrict__ moduleStart,        // just to zero first
                   uint32_t* __restrict__ nClustersInModule,  // just to zero them
                   uint32_t* __restrict__ clusModuleStart     // just to zero first
@@ -42,6 +42,7 @@ namespace gpuCalibPixel {
       nClustersInModule[i] = 0;
     }
 
+    //qua numElements
     for (int i = first; i < numElements; i += item_ct1.get_group_range(2) * item_ct1.get_local_range().get(2)) {
       if (InvId == id[i])
         continue;
@@ -61,7 +62,7 @@ namespace gpuCalibPixel {
       if (isDeadColumn | isNoisyColumn) {
         id[i] = InvId;
         adc[i] = 0;
-        stream_ct1 << "bad pixel\n" << endl;
+        printf("bad pixel\n");
       } else {
         float vcal = adc[i] * gain - pedestal * gain;
         adc[i] = sycl::max(100, int(vcal * conversionFactor + offset));
