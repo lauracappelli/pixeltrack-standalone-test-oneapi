@@ -537,6 +537,8 @@ namespace oneapi {
     std::exit(1);
   }
 
+  class calibDigis_kernel_;
+
   void digitocluster(const Input* input_d,
                      Output* output_d,
                      const uint32_t wordCounter,
@@ -576,7 +578,7 @@ namespace oneapi {
                               clusters_d_clusModuleStart);
           });
     });
-    queue.get_device().queues_wait_and_throw();
+    queue.wait_and_throw();
     if (debug) {
       queue.submit([&](cl::sycl::handler& cgh) {
         cgh.single_task([=]() { count_modules_kernel(input_d, output_d); });
