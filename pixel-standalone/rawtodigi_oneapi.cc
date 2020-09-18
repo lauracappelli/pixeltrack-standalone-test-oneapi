@@ -481,8 +481,7 @@ namespace oneapi {
         }
       }
 
-      pixelgpudetails::Pixel globalPix = pixelgpudetails::frameConversion(barrel, side, layer, rocIdInDetUnit, localPix);
-      xx[gIndex] = globalPix.row;  // origin shifting by 1 0-159
+      pixelgpudetails::Pixel globalPix = frameConversion(barrel, side, layer, rocIdInDetUnit, localPix);      xx[gIndex] = globalPix.row;  // origin shifting by 1 0-159
       yy[gIndex] = globalPix.col;  // origin shifting by 1 0-415
       adc[gIndex] = getADC(ww);
       pdigi[gIndex] = pack(globalPix.row, globalPix.col, adc[gIndex]);
@@ -563,7 +562,6 @@ namespace oneapi {
       std::cout << "work groups: " << blocks << ", work items per group: " << blockSize << std::endl;
     }
 
-    /*
     //eseguo il kernel calibDigis
     auto clusters_d = SiPixelClustersCUDA(gpuClustering::MaxNumModules, stream);
     auto clusters_d_moduleStart = clusters_d.moduleStart();
@@ -581,10 +579,10 @@ namespace oneapi {
     queue.get_device().queues_wait_and_throw();
     if (debug) {
       queue.submit([&](cl::sycl::handler& cgh) {
-        cgh.single_task<count_modules_kernel_>([=]() { count_modules_kernel(input_d, output_d); });
+        cgh.single_task([=]() { count_modules_kernel(input_d, output_d); });
       });
     }
-    */
+    
 /*
     //eseguo il kernel countModules
     queue.submit([&](cl::sycl::handler& cgh) {
