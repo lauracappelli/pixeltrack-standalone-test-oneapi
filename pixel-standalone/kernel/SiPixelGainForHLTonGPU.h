@@ -1,5 +1,5 @@
-#ifndef CondFormats_SiPixelObjects_SiPixelGainForHLTonGPU_h
-#define CondFormats_SiPixelObjects_SiPixelGainForHLTonGPU_h
+#ifndef kernel_SiPixelGainForHLTonGPU_h
+#define kernel_SiPixelGainForHLTonGPU_h
 
 #include <CL/sycl.hpp>
 #include <dpct/dpct.hpp>
@@ -62,4 +62,4 @@ public:
   unsigned int noisyFlag_;
 };
 
-#endif  // CondFormats_SiPixelObjects_SiPixelGainForHLTonGPU_h
+#endif  // kernel_SiPixelGainForHLTonGPU_h

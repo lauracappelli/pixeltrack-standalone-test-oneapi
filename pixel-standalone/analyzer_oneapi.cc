@@ -9,6 +9,7 @@
 #include "modules.h"
 #include "output.h"
 #include "rawtodigi_oneapi.h"
+#include "digitocluster_oneapi.h"
 
 namespace {
   constexpr int NLOOPS = 100;

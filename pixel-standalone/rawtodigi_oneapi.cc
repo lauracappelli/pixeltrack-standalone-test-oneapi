@@ -491,7 +491,7 @@ namespace oneapi {
 
   }  // end of Raw to Digi kernel
 //A QUA
-
+/*
   class rawtodigi_kernel_;
 
   void count_modules_kernel(const Input* input, const Output* output) {
@@ -584,7 +584,7 @@ namespace oneapi {
         cgh.single_task([=]() { count_modules_kernel(input_d, output_d); });
       });
     }
-    
+ */   
 /*
     //eseguo il kernel countModules
     queue.submit([&](cl::sycl::handler& cgh) {
@@ -640,12 +640,12 @@ namespace oneapi {
         cgh.single_task<count_modules_kernel_>([=]() { count_modules_kernel(input_d, output_d); });
       });
     }
-*/
+
   } catch (cl::sycl::exception const& exc) {
     std::cerr << exc.what() << "EOE at line " << __LINE__ << std::endl;
     std::exit(1);
   }
-  
+*/  
 /*
   void countModules_kernel(cl::sycl::nd_item<1> item,
                            const Input* input,

@@ -1,5 +1,5 @@
-#ifndef CUDADataFormats_SiPixelCluster_interface_gpuClusteringConstants_h
-#define CUDADataFormats_SiPixelCluster_interface_gpuClusteringConstants_h
+#ifndef kernel_gpuClusteringConstants_h
+#define kernel_gpuClusteringConstants_h
 
 #include <CL/sycl.hpp>
 #include <dpct/dpct.hpp>
@@ -31,4 +31,4 @@ namespace gpuClustering {
 
 }  // namespace gpuClustering
 
-#endif  // CUDADataFormats_SiPixelCluster_interface_gpuClusteringConstants_h
+#endif  // kernel_gpuClusteringConstants_h

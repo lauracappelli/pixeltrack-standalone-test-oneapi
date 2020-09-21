@@ -1,4 +1,5 @@
-TARGETS = naive cuda alpaka cupla kokkos oneapi
+#TARGETS = naive cuda alpaka cupla kokkos oneapi
+TARGETS = oneapi
 BUILD   = build
 DEBUG   = build/debug
 
@@ -21,7 +22,7 @@ $(DEBUG):
 # configure external tool here
 BOOST_BASE  :=
 TBB_BASE    :=
-CUDA_BASE   := /usr/local/cuda
+CUDA_BASE   := /usr/local/cuda-10.2
 ALPAKA_BASE := /usr/local/alpaka/alpaka
 CUPLA_BASE  := /usr/local/alpaka/cupla
 ONEAPI_BASE := /opt/intel/oneapi/compiler/latest/linux
